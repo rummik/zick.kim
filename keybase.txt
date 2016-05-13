@@ -1,0 +1,77 @@
+==================================================================
+https://keybase.io/rummik
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://zick.kim
+  * I am rummik (https://keybase.io/rummik) on keybase.
+  * I have a public key with fingerprint D72F 9A68 A075 14C3 815A  0D31 739C F2CB EF82 02E5
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "client": {
+            "name": "keybase.io node.js client",
+            "version": "0.8.20"
+        },
+        "key": {
+            "eldest_kid": "01017717029c609c7dd0a0cc379ad30cbf612abcec8e64e2e42502d923810393eb7f0a",
+            "fingerprint": "d72f9a68a07514c3815a0d31739cf2cbef8202e5",
+            "host": "keybase.io",
+            "key_id": "739cf2cbef8202e5",
+            "kid": "01017717029c609c7dd0a0cc379ad30cbf612abcec8e64e2e42502d923810393eb7f0a",
+            "uid": "e426d6369beff6fb5d90975a1652fc00",
+            "username": "rummik"
+        },
+        "service": {
+            "hostname": "zick.kim",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1443543004,
+    "expire_in": 157680000,
+    "prev": "46fac630d1d9aa4d8bbe1157df3862500b6bf4f9a630b8ff3a605111c8bd0811",
+    "seqno": 57,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtkn1QFGUcx49XB5CXERtF5W2vxAivZ99vr5kKIhuhN7OQPBF293kWNrjb4/ZA
+4DhIIiYIEEv0RtHJcRoqStRE3oaJ6WZoEspBRq1IDU4tKnRIYaZoql2GZmqmP9u/
+dp7f5/f9fX/f52mLDDIEBkz2nklxRfg+CRidEQw54b3fujFBgZWYxY2JJTKyu/Q/
+O29DmAUrRpUCryKTrCTZFYhMr6hJy0waVo6cqqzYNQqYzCYCYJ40nde7UQlEqiu/
+WIZ6FQc4y+IsIDiRAZzIQgh4IIoky/GQBKIgMTjBCyISzYihEIEoggYE5AjSjAOS
+I5HASoDXBkqyvRA5HU5Zt4hBlpA4njHzgKVxStRgmgeQxFmSEyVCFJBkJgCBaK2x
+SFFd/1oGW3Kav2TvP/j/2XfZkpxWZiBDMpw2SWIkgYYc4FiaxxmakEQAdFBFzuXg
+nWU2m1ysR6qdlcsi0mPV91iuV8lisalYtmldDqfiUkSlRDstcrkcqkXvclU6dGwP
+EvKXBfIF2Q61BP95c2/jGiq6ZF0SpyiSpkgAqDQMVThkJ8qXNQSnWcYMtE8fhMo1
+TYqReJEhAcQhx/MUNAsCwjUMSqSZ0SIAAiNIlH43JBDMkkTyDKBxHBfNAgRmHMf0
+nUrtCmahWc0oX6hpqnKhnXeVORHmaQzcEGwICDSEhgTqj9MQHhbz94sNXRNjaPOf
+O7g4megZX+fOklFO9ynou5Lgy7PMeZvbG1d9cHPF3b2Hw2cbNlZvsd44Himc2P1H
+/A9RnpKcpCv8jtVNcV6pKrlanRU3107ve7pGWTnjOOquKvAlXXjoMVucO3HFtaDV
+b8V3wu7FWcsly4ht61zo/NGGEG9cCFs7MhFV67h60l2eSI3G9k8+8Op8hCMlFyv9
+0Piy+zhXH/nRyozYojRvnfX2+Y7eTWVzxsmvmg8wQle60sH4LlmfvJWe0Zdx+tlW
+y4Bxe+QzT1x/96kY/61f4np9CWe+Hr1bSb3/4p9c/3hH0OWa+cY72b0eS5d0+piH
+Nuxab6x/ODnTZn0hcwyuP/DFkTezK+Sx7ftHz6+K/2z84CN5WV38TNV76lCDfLlv
+zRvWE7lJg+kjPWGpEUOLLa2gb/js94vPrTVu8sZt3td3z9G6u/vXd6ZD75t6tMKU
++dODbab2qZ1w9Fjt7ETyRXjo58L9tRUp/oEb0Xwpk93nFapsspiHB3ce+R2mBffI
+98dsibZ+Z7iW9fn0oeqotXOvRdd5Bm6KC81ybDj95Y5UnzGeKpnp2UoMtpwrOBVx
+J6Plx851t39LkPyGllz/S9dltX5by8Zh572KprNjE3amiXq8puAbZVCc7/90mLi6
+7eO9vtDXdzovmKRY/y7DhqFU49TF9tmTlc+HZdQtHOYX9vwF
+=NNMk
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rummik
+
+==================================================================
