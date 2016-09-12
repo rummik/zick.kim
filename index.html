@@ -83,43 +83,41 @@
     background: #22112a;
     height: 100vh;
   }
+    .links a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      flex-direction: column;
+      transition: 0.25s flex-grow;
+      text-align: center;
+      text-decoration: none;
+      color: #22112a;
+    }
+      .links a svg {
+        width: 10vw;
+      }
 
-  .links a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    flex-direction: column;
-    transition: 0.25s flex-grow;
-    text-align: center;
-    text-decoration: none;
-    color: #22112a;
-  }
+      .links a p {
+        width: 15vw;
+        height: 0;
+        opacity: 0;
+        transition: 0.25s;
+        transition-property: height, opacity;
+      }
 
-  .links a svg {
-    width: 10vw;
-  }
+      .links a b {
+        display: block;
+      }
 
-  .links a p {
-    width: 15vw;
-    height: 0;
-    opacity: 0;
-    transition: 0.25s;
-    transition-property: height, opacity;
-  }
+    .links a:hover {
+      flex-grow: 2;
+    }
 
-  .links a b {
-    display: block;
-  }
-
-  body a:hover {
-    flex-grow: 2;
-  }
-
-  .links a:hover p {
-    height: 4em;
-    opacity: 1;
-  }
+    .links a:hover p {
+      height: 4em;
+      opacity: 1;
+    }
 
   a[href*="github"] {
     background: #ff74ef;
