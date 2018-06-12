@@ -1,0 +1,631 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<title>resume</title>
+
+<noscript>Seriously.  Look at the source.  (And then turn on Javascript.  Because reasons.)</noscript>
+
+<div class="content"><div class="download-pdf"><a href="../resume.pdf" class="pdf">Download PDF</a></div></div>
+<div class="toggle-source">[<a href="#" id="view-source">view source</a><a href="#" id="view-styled">show styled</a>]</div>
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,700,400italic">
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  padding-bottom: 2em;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+.toggle-source {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  padding: 0.5em 0;
+  background: inherit;
+}
+
+.toggle-source a {
+  color: #729FCF !important;
+  text-decoration: none;
+}
+
+dt {
+  font-size: inherit !important;
+}
+
+.styled .toggle-source #view-styled {
+  display: none;
+}
+
+.source .toggle-source #view-source {
+  display: none;
+}
+
+
+/* styles for styled mode */
+.styled {
+  background: #fff;
+  color: #471f0e;
+  line-height: 1.4em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.styled a {
+  color: #ff6639;
+  text-decoration: none;
+}
+
+.styled .download-pdf {
+  position: absolute;
+  right: 10px;
+  width: 40px;
+}
+
+.styled .pdf {
+  background: #f0f0ff;
+  width: 40px;
+  height: 25px;
+  border-radius: 3px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,0.15);
+  position: fixed;
+  display: block;
+  top: 0;
+  font-size: 0;
+  line-height: 1em;
+  color: #333;
+  overflow: hidden;
+}
+
+.styled .pdf:before {
+  content: '↓';
+  display: block;
+  position: absolute;
+  bottom: -28px;
+  line-height: 1em;
+  left: 50%;
+  font-size: 160px;
+  font-family: 'Ubuntu Mono', monospace;
+  width: 160px;
+  margin-left: -80px;
+  text-align: center;
+  color: #e3e3e3;
+}
+
+.styled .pdf:after {
+  content: 'pdf';
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.styled .content {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  font-family: 'Ubuntu', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 auto 20px;
+  padding-top: 20px;
+}
+
+.styled .toggle-source {
+  padding-top: 0;
+  box-shadow: 0 0 2em 1em #fff;
+}
+
+.styled .line,
+.styled .comment,
+.styled .link-href,
+.styled .link-ref,
+.styled .link-ref-name,
+.styled .link-ref-url,
+.styled .header-hash,
+.styled .header-line,
+.styled .list,
+.styled .image .src,
+.styled .image .alt,
+.styled .template-source {
+  display: none;
+}
+
+.styled img:nth-of-type(1) {
+  height: 2.5em;
+  vertical-align: top;
+  margin-right: 0.2em;
+}
+
+/* headers */
+.styled h1 {
+  font-size: 4em;
+  line-height: 2.5em;
+}
+
+.styled h2, .styled h3 {
+  margin-top: 1.7em;
+}
+
+/* lists */
+.styled dl {
+  overflow: hidden;
+}
+
+.styled dl:nth-of-type(1) {
+  max-width: 700px;
+  margin: auto;
+}
+
+.styled dl:nth-of-type(1) di {
+  overflow: hidden;
+  width: 50%;
+}
+
+.styled dl:nth-of-type(1) di:nth-of-type(2n-1) {
+  float: left;
+}
+
+.styled dl:nth-of-type(1) di:nth-of-type(2n) {
+  float: right;
+}
+
+.styled dt {
+  float: left;
+  text-align: right;
+}
+
+.styled dt:after {
+  content: ': ';
+  white-space: pre;
+}
+
+.styled dd {
+  clear: right;
+}
+
+.styled dt,
+.styled dd {
+  margin-bottom: 5px;
+}
+
+.styled ul,
+.styled li {
+  padding-left: 0;
+  list-style: none;
+}
+
+.styled li:before {
+  content: '»';
+}
+
+.styled dl .template-result {
+  vertical-align: super;
+  font-size: xx-small;
+  font-style: italic;
+  display: inline-block;
+  margin-top: -5px;
+}
+
+.styled dl .template-result:after {
+  content: '+';
+}
+
+
+/* styles for source mode */
+.source {
+  font-family: 'Ubuntu Mono', monospace;
+  background: #111;
+  color: #eee;
+}
+
+.source .download-pdf {
+  display: none;
+}
+
+.source .toggle-source {
+  padding-top: 0;
+  box-shadow: 0 0 1.25em 1em #111;
+}
+
+.source .content {
+  white-space: pre;
+  padding: .5em;
+  position: relative;
+}
+
+.source .content:after {
+  content: '';
+  margin-left: 79ch;
+  width: 41ch;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(left, #2e3436 1ch, transparent 1ch);
+  background-size: 20ch auto;
+}
+
+/* inline some block elements */
+.source p,
+.source ul,
+.source li,
+.source dl,
+.source dt,
+.source dd {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.source ul,
+.source li {
+  list-style: none;
+}
+
+/* images */
+.source .image img,
+.source .template-result {
+  display: none;
+}
+
+.source .image .alt:before,
+.source .image .alt:after,
+.source .image .src:before,
+.source .image .src:after {
+  color: #34E2E2;
+}
+
+.source .image .alt:before { content: '!['; }
+.source .image .alt:after { content: ']'; }
+.source .image .src:before { content: '('; }
+.source .image .src:after { content: ')'; }
+
+/* links */
+.source .quicklink:before,
+.source .quicklink:after,
+.source .link:before,
+.source .link:after,
+.source .link-href:before,
+.source .link-href:after,
+.source .link-ref:before,
+.source .link-ref:after,
+.source .link-ref-name:before,
+.source .link-ref-name:after {
+  color: #34E2E2;
+  text-decoration: none;
+}
+
+.source .quicklink:before { content: '<'; }
+.source .quicklink:after { content: '>'; }
+.source .link-href:before { content: '('; }
+.source .link-href:after { content: ')'; }
+.source .link:before,
+.source .link-ref-name:before,
+.source .link-ref:before { content: '['; }
+.source .link:after,
+.source .link-ref-name:after { content: ']'; }
+.source .link-ref:after { content: ']:'; }
+
+.source .link { color: #729FCF; }
+.source .link-ref-name,
+.source .link-ref { color: #8AE234; }
+
+.source .template-source { color: #34E2E2; }
+.source .template-source .action { color: #8AE234; }
+.source .template-source .argument { color: #AD7FA8; }
+
+.source a {
+  color: #AD7FA8;
+  text-decoration: none;
+}
+
+/* headers */
+.source h1,
+.source h2,
+.source h3 {
+  color: #AD7FA8;
+  font-size: inherit;
+  font-weight: inherit;
+  display: inline;
+}
+
+.source .header-line { color: #729FCF; }
+.source .header-hash { color: #EF2929; }
+
+/* lists */
+.source dt { color: #8AE234; }
+.source dt:after {
+  content: ' |';
+  color: #34E2E2;
+}
+
+.source li:before {
+  content: '-';
+  color: #FCE94F;
+}
+
+/* Comments */
+.source .comment { color: #34E2E2; }
+
+/* Line numbers */
+.source .line {
+  color: #FCE94F;
+  display: inline-block;
+  text-align: right;
+}
+
+/* I know responsive.  That makes me a designer? */
+@media screen and (max-width: 699px) {
+  .styled h1 {
+    font-size: 3em;
+  }
+
+  .styled dl:nth-of-type(1) {
+    max-width: 550px;
+  }
+
+  .styled dl:nth-of-type(1) dt {
+    text-align: left;
+  }
+
+  .styled dl:nth-of-type(1) dd {
+    clear: both;
+    margin-left: 30px !important;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  .styled h1 {
+    text-align: center;
+  }
+
+  .styled h1 .image {
+    display: block;
+  }
+
+  .styled h1 img {
+    height: 270px !important;
+  }
+
+  .styled dl:nth-of-type(1) {
+    max-width: 270px;
+  }
+
+  .styled dl:nth-of-type(1) di {
+    float: none !important;
+  }
+
+  .styled dt {
+    text-align: left;
+  }
+
+  .styled dd {
+    clear: both;
+    margin-left: 10px !important;
+  }
+
+}
+
+/* Hide source toggle when printing, among other things */
+@media print {
+  body {
+    font-size: 16px;
+  }
+
+  .toggle-source,
+  .download-pdf {
+    display: none !important;
+  }
+
+  .styled .content {
+    width: 800px;
+  }
+
+  .styled ul:first-of-type {
+    margin-top: -1em;
+    display: block;
+  }
+
+  .styled .comment {
+    display: inline-block;
+    color: #fefefe;
+  }
+
+  .styled h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .styled h1 .image {
+    display: block;
+    margin-top: 150px;
+  }
+
+  .styled h1 img {
+    height: 3.5em !important;
+    margin-right: 0 !important;
+    margin-left: 0.3em;
+  }
+
+  .styled h2:nth-of-type(1),
+  .styled h3:nth-of-type(3) {
+    page-break-before: always;
+  }
+
+  .styled p:nth-of-type(1),
+  .styled p:nth-of-type(2) {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    width: 90%;
+    margin: 0 auto 1em;
+  }
+
+  .styled p:nth-of-type(2) {
+    margin: 0 auto 30px;
+  }
+
+  .styled dl:nth-of-type(1) {
+    font-size: 1.08em;
+    line-height: 1.5em;
+    width: 726px !important;
+    max-width: 800px !important;
+  }
+
+  .styled dl:nth-of-type(1) di {
+    margin-left: -14px;
+  }
+}
+</style>
+
+<script>
+function forEach(self, fn) { return Array.prototype.forEach.call(self, fn); }
+function setImmediate(fn) { return setTimeout(fn, 1); }
+
+// JS hooks for toggling style (think a wordy `$('.toggle-source a').click(function() { ... });`)
+forEach(document.querySelectorAll('.toggle-source a'), element => {
+  element.onclick = function() {
+    document.body.className = this.getAttribute('id').replace('view-', '');
+    return false;
+  };
+});
+
+document.body.className = location.hash === '#source' ? 'source' : 'styled';
+
+// A slightly Markdown parser
+let xhr = new XMLHttpRequest();
+
+xhr.open('GET', '../resume.md', true);
+
+xhr.onreadystatechange = () => {
+  if (xhr.readyState != 4 || xhr.status != 200)
+    return;
+
+  let line = 0;
+  let lines = xhr.responseText.match(/\n/g).length;
+  let w = lines.toString().length;
+  let content = document.querySelector('.content');
+  let links = {};
+
+  // Markdown-ish parser -- includes some extra things, slightly clobbers a few things, lacks other things
+  content.innerHTML += xhr.responseText
+    // Images
+    .replace(/!\[([^\]]+)\]\(([^\)]+)\)/g, '<span class="image"><span class="alt">$1</span><span class="src">$2</span><img src="$2" alt="$1"></span>')
+
+    // Links
+    .replace(/<(?!\/)([^>\s]+)>/g, (g, match) => {
+      let link = /^[^:]+@.+$/.test(match) ? 'mailto:' + match : match;
+      return `<a href="${link}" class="quicklink">${match}</a>`;
+    })
+
+    .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" class="link">$1</a><a href="$2" class="link-href">$2</a>')
+
+    .replace(/\[([^\]]+)\]:(.+)/g, (m, name, url) => {
+      let trimmed = url.replace(/^\s+|\s+$/g, '');
+      links[name.replace(/\s+/g, ' ')] = trimmed;
+
+      return `<a class="link-ref" href="${trimmed}">${name}</a>` +
+             `<a class="link-ref-url" href="${trimmed}">${url}</a>`;
+    })
+
+    .replace(/\[([^\]]+)\]\[([^\]]*)\]/g, (r, title, name) => {
+      let url = links[(name.length ? name : title).replace(/\s+/g, ' ')] || '#';
+
+      return `<a class="link" href="${url}" ${name ? `title="${name}"` : ''}>${title}</a>` +
+             `<a class="link-ref-name" href="${url}">${name}</a>`;
+    })
+
+    // Headers
+    .replace(/^(.+)\n(=+)$/mg, '<h1>$1</h1>\n<span class="header-line">$2</span>')
+    .replace(/^(.+)\n(-+)$/mg, '<h2>$1</h2>\n<span class="header-line">$2</span>')
+    .replace(/^(#+)(.+)$/mg, (r, hash, text) => {
+      let n = hash.length;
+      return '<span class="header-hash">' + hash + '</span><h' + n + '>' + text + '</h' + n + '>';
+    })
+
+    // Lists...don't ask.  It's lazy
+    .replace(/^(\s*)(?!-->)(?:[-*])((?:[^|\n]|\n )+)/mg, '$1<li>$2</li>')
+    .replace(/((?:<li>(?:.|\n)+?<\/li>\n?)+)/g, '<ul>$1</ul>')
+
+    // Shh.  <di> isn't part of HTML5 spec, but I won't tell if you don't ;)
+    // For reference, it was intended to be part of the XHTML 2.0 spec, which never went anywhere
+    .replace(/^(.+?)(\s*)\|((?:[^|\n]|\n )+)$/mg, '<di><dt>$1</dt><dd>$3</dd></di>')
+    .replace(/((?:<di><dt>(?:.|\n)+?<\/dt><dd>(?:.|\n)+?<\/dd><\/di>\n?)+)/g, '<dl>$1</dl>')
+
+    // HTML comments
+    .replace(/<(!--(.|[\r\n])*?--)>/g, '<span class="comment">&lt;$1&gt;</span>')
+
+    // Paragraphs
+    .replace(/^(\s?\w(?:.|\n *[^\r\n])+)/mg, '<p>$1</p>')
+
+    // ...Templating.  Not part of Markdown, just conveniently placed here
+    .replace(/\{since:([^}]+)\}/g, (m, argument) => {
+      let result = (new Date().getYear() + 1900) - (+argument);
+
+      if (isNaN(result)) {
+        result = argument;
+      }
+
+      return '<span class="template">' +
+          '<span class="template-source">{' +
+            '<span class="action">since</span>:' +
+            '<span class="argument">' + argument + '</span>' +
+          '}</span>' +
+          '<span class="template-result">' +
+            result +
+          '</span>' +
+        '</span>';
+    })
+
+    // Line numbers...it's better not to ask how much of a mess this makes
+    .replace(/^/mg, () => {
+      let l = (++line).toString();
+      return '<span class="line">' + (new Array(w - l.length + 1).join(' ')) + l + '</span> ';
+    });
+
+  // Sillyness to make some bits line up cleanly.
+  setImmediate(() => {
+    let span = content.appendChild(document.createElement('span'));
+    span.style.display = 'inline-block';
+
+    forEach(document.querySelectorAll('.content dl'), (dl, n) => {
+      let max = 0;
+
+      forEach(dl.querySelectorAll('dt'), dt => {
+        span.innerHTML = dt.innerHTML + ':&nbsp;';
+        max = Math.max(span.clientWidth + 10, max);
+      });
+
+      let _dl = '.styled dl:nth-of-type(' + (n + 1) + ')';
+
+      document.styleSheets[1].insertRule(
+        _dl + ' dt {' +
+          'width: ' + max + 'px;' +
+        '}',
+      0);
+
+      document.styleSheets[1].insertRule(
+        _dl + ' dd {' +
+          'margin-left: ' + (max + 5) + 'px;' +
+        '}',
+      0);
+    });
+
+    content.removeChild(span);
+  });
+};
+
+xhr.send();
+</script>
