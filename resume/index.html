@@ -5,7 +5,7 @@
 
 <noscript>Seriously.  Look at the source.  (And then turn on Javascript.  Because reasons.)</noscript>
 
-<div class="content"><div class="download-pdf"><a href="../resume.pdf" class="pdf">Download PDF</a></div></div>
+<div class="content"><div class="download-pdf"><a href="resume.pdf" class="pdf">Download PDF</a></div></div>
 <div class="toggle-source">[<a href="#" id="view-source">view source</a><a href="#" id="view-styled">show styled</a>]</div>
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,700,400italic">
@@ -507,7 +507,7 @@ document.body.className = location.hash === '#source' ? 'source' : 'styled';
 // A slightly Markdown parser
 let xhr = new XMLHttpRequest();
 
-xhr.open('GET', '../resume.md', true);
+xhr.open('GET', 'resume.md', true);
 
 xhr.onreadystatechange = () => {
   if (xhr.readyState != 4 || xhr.status != 200)
