@@ -83,27 +83,26 @@
     background: #22112a;
     height: 100vh;
   }
+    .links a, .links a p {
+      transition-duration: 0.25s;
+    }
+
     .links a {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-grow: 1;
-      flex-direction: column;
-      transition: 0.25s flex-grow;
+      transition-property: flex-grow;
       text-align: center;
       text-decoration: none;
       color: #22112a;
+      overflow: hidden;
     }
-      .links a svg {
-        height: 10vw;
-      }
 
       .links a p {
-        width: 15vw;
         height: 0;
         opacity: 0;
-        transition: 0.25s;
-        transition-property: height, opacity;
+        transition-property: height, margin, opacity;
       }
 
       .links a b {
@@ -113,11 +112,9 @@
     .links a:hover {
       flex-grow: 2;
     }
-
-    .links a:hover p {
-      height: 4em;
-      opacity: 1;
-    }
+      .links a:hover p {
+        opacity: 1;
+      }
 
   a[href*="github"] {
     background: #ff74ef;
@@ -137,5 +134,49 @@
 
   a[href*="twitter"] {
     background: #46d5ce;
+  }
+
+  @media screen and (orientation: landscape) {
+    .links {
+      flex-direction: row;
+    }
+      .links a {
+        flex-direction: column;
+      }
+        .links a svg {
+          height: 10vw;
+        }
+
+        .links a p {
+          width: 15vw;
+        }
+
+        .links a:hover p {
+          height: 4em;
+        }
+  }
+
+  @media screen and (orientation: portrait) {
+    .links {
+      flex-direction: column;
+    }
+      .links a {
+        flex-direction: row;
+      }
+        .links a svg {
+          height: 10vh;
+        }
+
+        .links a p {
+          width: 50vw;
+          height: auto;
+          margin: -5vh -55vw -5vh 5vw;
+          vertical-align: middle;
+        }
+
+      .links a:hover p {
+        margin: -5vh -5vw -5vh 5vw;
+        opacity: 1;
+      }
   }
 </style>
