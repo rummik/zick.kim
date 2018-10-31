@@ -21,14 +21,14 @@ write code, and chew bubble gum.
      Email | <hi@9k1.us> or [one just for you](https://9k1.us)
      Phone | [(413) 648-7531](tel:413-648-7531)
     GitLab | <https://gitlab.com/rummik>
-  Mastodon | <https://awoo.pub/@rummik>
+   Twitter | <https://twitter.com/iotasamurai>
    Keybase | <https://keybase.io/rummik>
 Public Key | [739C F2CB EF82 02E5](https://zick.kim/rummik.asc)
 
 
  Tools I've Used
 -----------------
-             Languages | Javascript (browsers{since:2003},
+             Languages | JavaScript (browsers{since:2003},
                          [Node.js][]{since:2010}), shell (Zsh{since:2009},
                          Bash), PHP{since:2006}, SQL (MySQL{since:2008},
                          Postgres), JSON, Twig, [Swig][], EJS, Savant3,
@@ -49,19 +49,34 @@ Libraries & Frameworks | Underscore, [Lodash][], jQuery, [Zepto][], [Dabble][],
       Database Servers | MySQL, Postgres, MongoDB, SQLite
      Operating Systems | Linux{since:2005} (Debian{since:2005},
                          Ubuntu{since:2007}, CentOS, NixOS{since:2017})
-                  Misc | [CloudFlare][], [NPM][], [Yarn][], [Composer][], [Antigen][]
+                  Misc | [CloudFlare][], [NPM][], [Yarn][], [Composer][],
+                         [Antigen][]
 
 
- Employment
-------------
 <!--
   Your company develops open source software?
   I totally want to work there!
 -->
-- Development Lead - Clarabyte (February 2016 → June 2018)
-- Lead Technician - e360 Technologies (March 2015 → February 2016)
-- Software Engineer - UPMC Technology Development Center
-  (May 2014 → November 2014)
+
+ Employment
+------------
+
+### Software Engineer, Development Lead - Clarabyte (February 2016 → June 2018)
+Lead a team of engineers through the process of developing new data security
+tools and asset management solutions for refurbishers.
+
+### Lead Technician - e360 Technologies (March 2015 → February 2016)
+Developed new inventory management systems and hardware refurbishment/testing
+methods to streamline the refurbishment, recycling, and resale processes.
+
+### Software Engineer - UPMC TDC (May 2014 → November 2014)
+Worked with a team of engineers to build a unique experience for medical
+professionals to navigate patient information.
+
+### Contributor - Gratipay (January 2013 → January 2015)
+Primarily maintained and contributed to the JavaScript portions of the
+Gratipay codebase, including the grtp.co widgets, and JavaScript testing and
+build system.
 
 
  Work Samples
@@ -70,24 +85,9 @@ Much of my recent work is available on [GitLab][my GitLab profile], and mirrored
 on [GitHub][my GitHub profile].  What isn't listed here can be found on [my
 GitLab profile][] by viewing [my public repositories][].
 
-[my GitHub profile]: https://github.com/rummik
 [my GitLab profile]: https://gitlab.com/rummik
-[my public repositories]: https://gitlab.com/users/rummik/projects
-
-### Gratipay (January 2013 → April 2015)
-Sustainable crowdfunding.  I contributed JavaScript code, and API adjustments.
-I also set up Grunt, JSHint, and Webdriver.io, for lint testing JS, and handling
-integration tests.
-
-- Tools: [Node.js][], [Grunt][], [JSHint][], [Webdriver.io][], HTML5, CSS3
-- <https://github.com/gratipay/www.gratipay.com>
-
-### Gratipay Widgets (February 2013 → April 2015)
-Started out as a tiny project so I could make my own Gratipay-related widgets
-easily, but was later moved into the Gratipay project.
-
-- Tools: [Node.js][], [Grunt][], [JSHint][], [Dalek.js][], HTML5
-- <https://github.com/gratipay/grtp.co>
+[my GitHub profile]: https://github.com/rummik
+[my public repositories]: https://gitlab.com/zick.kim
 
 ### Shellcast / TTY.tv - Easy TTY broadcasting (November 2013 → Present)
 Shellcast broadcasts a terminal to a public (or private) URL, usually on tty.tv.
@@ -113,17 +113,15 @@ pretty on small screens ☺)
 - Tools: [Node.js][], jQuery, [Grunt][], [JSHint][], Karma, [Mocha][], [Swig][],
   [Stylus][], HTML5, CSS3
 - <https://telepathy.pw>
-- <https://github.com/rummik/telepathy-web>
-- <https://github.com/rummik/telepathy>
+- <https://gitlab.com/chameleoid/telepathy>
 
 
 ### 9k1.us (October 2013) <!-- IT'S OVER 9000! -->
-The domain I use for email.  It formerly used Express.js and ran on Heroku, but
-currently uses PHP and Slim. It also has a quirky paste/file upload + URL
-shortener (works privately), LMGTFY-like search, and lets you find your public
+My personal, private, paste/file bin, and URL shortener.  It also provides
+LMGTFY-like search functionality and a simple API for determining your public
 IP.
 
-- Tools: PHP, JavaScript, Slim, Twig, HTML5, CSS3
+- Tools: JavaScript (search), Typescript, Nest.js, Yarn, [Node.js][]
 - <https://9k1.us>
 - <https://9k1.us/ip>
 - <https://9k1.us/search>
