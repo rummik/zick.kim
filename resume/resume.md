@@ -53,30 +53,44 @@ Libraries & Frameworks | Underscore, [Lodash][], jQuery, [Zepto][], [Dabble][],
                          [Antigen][]
 
 
-<!--
-  Your company develops open source software?
-  I totally want to work there!
--->
-
- Employment
-------------
+ Work History
+--------------
 
 ### Software Engineer, Development Lead - Clarabyte (February 2016 → June 2018)
 Lead a team of engineers through the process of developing new data security
 tools and asset management solutions for refurbishers.
 
+- Tools: Node.js, Electron, Angular, Circle CI, Mocha, HTML, CSS,
+  CloudFlare, Linux (Ubuntu, NixOS), SQLite, Webdriver
+
 ### Lead Technician - e360 Technologies (March 2015 → February 2016)
 Developed new inventory management systems and hardware refurbishment/testing
 methods to streamline the refurbishment, recycling, and resale processes.
+
+- Tools: HTML, CSS, PHP, Twig, Underscore, Zepto, CloudFlare, Node.js, Mocha,
+  Express, Linux (Ubuntu)
 
 ### Software Engineer - UPMC TDC (May 2014 → November 2014)
 Worked with a team of engineers to build a unique experience for medical
 professionals to navigate patient information.
 
+- Tools: Git, Cucumber, Angular, [Gulp][], Node.js, HTML, CSS
+
 ### Contributor - Gratipay (January 2013 → January 2015)
 Primarily maintained and contributed to the JavaScript portions of the
 Gratipay codebase, including the grtp.co widgets, and JavaScript testing and
 build system.
+
+- Tools: Git, Nginx, Underscore, Zepto, JSONML, Dalek.js, Travis CI, Webdriver
+
+### Open-Sourceress - Chameleoid (January 2009 → Present)
+My general umbrella for my various open-source developments.  Currently focusing
+on developing open-source software and hardware that helps folks with
+disabilities, as well as continuing development on a unique password management
+solution (see Telepathy).
+
+- Tools: Various (Git, Mercurial, CI services, testing frameworks, PHP
+  frameworks, and JS frameworks, templating engines, database servers, Linux)
 
 
  Work Samples
@@ -89,7 +103,7 @@ GitLab profile][] by viewing [my public repositories][].
 [my GitHub profile]: https://github.com/rummik
 [my public repositories]: https://gitlab.com/zick.kim
 
-### Shellcast / TTY.tv - Easy TTY broadcasting (November 2013 → Present)
+### Shellcast / TTY.tv - Easy TTY broadcasting
 Shellcast broadcasts a terminal to a public (or private) URL, usually on tty.tv.
 The idea was to have something similar to twitch.tv, but for programmers,
 MUD/Mush games, and anything that runs on the CLI.
@@ -99,7 +113,7 @@ MUD/Mush games, and anything that runs on the CLI.
 - <https://tty.tv>
 - <https://github.com/rummik/shellcast>
 
-### Telepathy - A telepathic password manager (September 2012 → Present)
+### Telepathy - A telepathic password manager
 I wanted a password manager that didn't store any information on a server,
 but still had the ability to retrieve the right password from any device.
 
@@ -116,7 +130,7 @@ pretty on small screens ☺)
 - <https://gitlab.com/chameleoid/telepathy>
 
 
-### 9k1.us (October 2013) <!-- IT'S OVER 9000! -->
+### 9k1.us  <!-- IT'S OVER 9000! -->
 My personal, private, paste/file bin, and URL shortener.  It also provides
 LMGTFY-like search functionality and a simple API for determining your public
 IP.
