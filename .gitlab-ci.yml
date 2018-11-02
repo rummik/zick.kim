@@ -1,0 +1,18 @@
+image: alpine:latest
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp *.ico public
+    - cp *.html public
+    - cp *.asc public
+    - cp *.pdf public
+    - cp ping public -r
+    - cp resume public -r
+    - cp keybase.txt public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
