@@ -58,14 +58,16 @@ Libraries & Frameworks | Underscore, [Lodash][], jQuery, [Zepto][], [Dabble][],
 
 ### Software Engineer, Development Lead - Clarabyte (February 2016 → June 2018)
 Lead a team of engineers through the process of developing new data security
-tools and asset management solutions for refurbishers.
+tools and asset management solutions for refurbishers.  This was a continuation
+of the work I was doing at e360 Technologies.
 
 - Tools: Node.js, Electron, Angular, Circle CI, Mocha, HTML, CSS,
   CloudFlare, Linux (Ubuntu, NixOS), SQLite, Webdriver
 
 ### Lead Technician - e360 Technologies (March 2015 → February 2016)
 Developed new inventory management systems and hardware refurbishment/testing
-methods to streamline the refurbishment, recycling, and resale processes.
+methods to streamline the refurbishment, recycling, and resale processes, which
+were eventually used in the development of commercial products at Clarabyte.
 
 - Tools: HTML, CSS, PHP, Twig, Underscore, Zepto, CloudFlare, Node.js, Mocha,
   Express, Linux (Ubuntu)
