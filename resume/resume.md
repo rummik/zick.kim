@@ -10,10 +10,9 @@ I also really enjoy working with others to build amazing things, wear hats,
 write code, and chew bubble gum.
 
 <!--
-  Incidientally, I also try to avoid buzzwords, which is why you don't see
-  'self-motivated', 'driven', 'full-stack', etc.  Those terms probably apply,
-  but I feel they attract the wrong kind of employer.  Also, this comment has
-  the fun effect of those keywords showing up when I'm being searched for. ;)
+  I also try to avoid buzzwords, which is why you don't see 'self-motivated',
+  'driven', 'full-stack', etc.  Those terms may apply, but I feel they attract
+  the wrong kind of employer.
 -->
 
    Website | <https://zick.kim>
@@ -21,13 +20,13 @@ write code, and chew bubble gum.
      Email | <hi@9k1.us> or [one just for you](https://9k1.us)
      Phone | [(413) 648-7531](tel:413-648-7531)
     GitLab | <https://gitlab.com/rummik>
-   Twitter | <https://twitter.com/iotasamurai>
+  Location | [Pittsburgh, PA 15221](https://www.google.com/maps/place/Pittsburgh,+PA)
    Keybase | <https://keybase.io/rummik>
 Public Key | [739C F2CB EF82 02E5](https://zick.kim/rummik.asc)
 
 
- Tools I've Used
------------------
+ Skills
+--------
              Languages | JavaScript (browsers{since:2003},
                          [Node.js][]{since:2010}), shell (Zsh{since:2009},
                          Bash), PHP{since:2006}, SQL (MySQL{since:2008},
@@ -113,7 +112,7 @@ MUD/Mush games, and anything that runs on the CLI.
 - Tools: [Node.js][], HTML5, CSS3, [Express][], [Underscore][], Socket.io,
   [Swig][], PTY.js, Term.js
 - <https://tty.tv>
-- <https://github.com/rummik/shellcast>
+- <https://gitlab.com/chameleoid/tty.tv/shellcast>
 
 ### Telepathy - A telepathic password manager
 I wanted a password manager that didn't store any information on a server,
@@ -141,7 +140,7 @@ IP.
 - <https://9k1.us>
 - <https://9k1.us/ip>
 - <https://9k1.us/search>
-- <https://github.com/rummik/9k1.us>
+- <https://gitlab.com/rummik/9k1.us>
 
 <!-- LINKS!  ALL THE LINKS! -->
 
