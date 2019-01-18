@@ -27,27 +27,22 @@ Public Key | [739C F2CB EF82 02E5](https://zick.kim/rummik.asc)
 
  Skills
 --------
-             Languages | JavaScript (browsers{since:2003},
-                         [Node.js][]{since:2010}), shell (Zsh{since:2009},
-                         Bash), PHP{since:2006}, SQL (MySQL{since:2008},
-                         Postgres), JSON, Twig, [Swig][], EJS, Savant3,
-                         CSS{since:2003} (CSS3, Less, Stylus)
-      Markup Languages | Markdown (vanilla, GitHub), YAML, XML, HTML{since:2003}
-                         (XHTML, HTML5{since:2010}),
-                         JSONML
-        Source Control | Git{since:2009}, Mercurial
-         Documentation | JSDoc{since:2012}, Doxygen
-               Testing | Travis CI, Circle CI, [Gulp][], [Grunt][]{since:2012},
-                         Karma, [Mocha][], [Dalek.js][], [JSHint][], Cucumber
-                         (Ruby), [Webdriver.io][]
+             Languages | JavaScript (browsers, [Node.js][]), shell (Zsh, Bash),
+                         PHP, SQL (MySQL, Postgres), JSON, Twig, [Swig][], EJS,
+                         Savant3, CSS (CSS3, Less, Stylus)
+      Markup Languages | Markdown (vanilla, GitHub), YAML, XML, HTML (XHTML,
+                         HTML5), JSONML
+        Source Control | Git, Mercurial
+         Documentation | JSDoc, Doxygen
+               Testing | Travis CI, Circle CI, [Gulp][], [Grunt][], Karma,
+                         [Mocha][], [Dalek.js][], [JSHint][], Cucumber (Ruby),
+                         [Webdriver.io][]
 Libraries & Frameworks | Underscore, [Lodash][], jQuery, [Zepto][], [Dabble][],
                          Socket.io, Bootstrap, Slim, [Express][], Propel,
-                         [Browserify][], Angular{since:2014},
-                         [VanillaJS][]{since:2003}
-          HTTP Servers | Nginx{since:2010} (with PHP-FPM), Apache 2
+                         [Browserify][], Angular, [VanillaJS][]
+          HTTP Servers | Nginx (with PHP-FPM), Apache 2
       Database Servers | MySQL, Postgres, MongoDB, SQLite
-     Operating Systems | Linux{since:2005} (Debian{since:2005},
-                         Ubuntu{since:2007}, CentOS, NixOS{since:2017})
+     Operating Systems | Linux (Debian, Ubuntu, CentOS, NixOS)
                   Misc | [CloudFlare][], [NPM][], [Yarn][], [Composer][],
                          [Antigen][]
 
