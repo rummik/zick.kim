@@ -71,6 +71,34 @@
   </a>
 </div>
 
+<script>
+  for (let el of document.querySelectorAll('a')) {
+    let counter = 0;
+    let touched = false;
+
+    el.addEventListener('touchstart', event => {
+      touched = true;
+      counter++;
+
+      if (document.activeElement !== el) {
+        el.focus();
+      }
+    });
+
+    el.addEventListener('blur', event => {
+      counter = 0;
+    });
+
+    el.addEventListener('click', event => {
+      if (document.activeElement === el && touched && counter < 2) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      }
+    });
+  }
+</script>
+
 <style>
   html, body {
     height: 100%;
@@ -113,10 +141,12 @@
         fill: #22112a;
       }
 
-    .links a:hover {
+    .links a:hover,
+    .links a:focus {
       flex-grow: 2;
     }
-      .links a:hover p {
+      .links a:hover p,
+      .links a:focus p {
         opacity: 1;
       }
 
@@ -158,7 +188,8 @@
           width: 15vw;
         }
 
-        .links a:hover p {
+        .links a:hover p,
+        .links a:focus p {
           height: 4em;
         }
   }
@@ -181,7 +212,8 @@
           vertical-align: middle;
         }
 
-      .links a:hover p {
+      .links a:hover p,
+      .links a:focus p {
         margin: -5vh 0 -5vh 5vw;
         opacity: 1;
       }
