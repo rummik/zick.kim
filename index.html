@@ -103,12 +103,8 @@
     });
 
     el.addEventListener('click', event => {
-      if (!touched) {
-        el.blur();
-      } else if (counter < 2) {
+      if (touched && counter < 2) {
         event.preventDefault();
-        event.stopPropagation();
-        return false;
       }
     });
   }
@@ -157,14 +153,23 @@
         fill: #22112a;
       }
 
-    .links a:hover,
     .links a:focus {
       flex-grow: 2;
     }
-      .links a:hover p,
+      @media screen and (pointer: fine) {
+        .links a:hover {
+          flex-grow: 2;
+        }
+      }
+
       .links a:focus p {
         opacity: 1;
       }
+        @media screen and (pointer: fine) {
+          .links a:hover p {
+            opacity: 1;
+          }
+        }
 
   a[href*="gitlab"] {
     background: #ff74ef;
@@ -210,11 +215,15 @@
           width: 15vw;
         }
 
-        .links a:hover p,
         .links a:focus p {
           height: 4em;
         }
   }
+    @media screen and (orientation: landscape) and (pointer: fine) {
+      .links a:hover p {
+        height: 4em;
+      }
+    }
 
   @media screen and (orientation: portrait) {
     .links {
@@ -238,9 +247,13 @@
           vertical-align: middle;
         }
 
-      .links a:hover p,
-      .links a:focus p {
+        .links a:focus p {
+          margin: -5vh 0 -5vh 5vw;
+        }
+  }
+    @media screen and (orientation: portrait) and (pointer: fine) {
+      .links a:hover p {
         margin: -5vh 0 -5vh 5vw;
       }
-  }
+    }
 </style>
