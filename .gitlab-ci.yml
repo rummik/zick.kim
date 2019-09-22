@@ -5,6 +5,7 @@ pages:
   script:
     - mkdir public
     - cp *.ico public
+    - cp *.png public
     - cp *.html public
     - cp *.asc public
     - cp *.vcf public
