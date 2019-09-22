@@ -7,6 +7,7 @@ pages:
     - cp *.ico public
     - cp *.html public
     - cp *.asc public
+    - cp *.vcf public
     - cp *.pdf public
     - cp ping public -r
     - cp resume public -r
