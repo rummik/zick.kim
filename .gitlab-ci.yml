@@ -3,17 +3,7 @@ image: alpine:latest
 pages:
   stage: deploy
   script:
-    - mkdir public
     - wget -qO public/calendar.ics https://calendar.google.com/calendar/ical/kimberly.zick%40gmail.com/public/basic.ics
-    - cp *.ico public
-    - cp *.png public
-    - cp *.html public
-    - cp *.asc public
-    - cp *.vcf public
-    - cp *.pdf public
-    - cp ping public -r
-    - cp resume public -r
-    - cp keybase.txt public
   artifacts:
     paths:
       - public
