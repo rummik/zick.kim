@@ -1,21 +1,22 @@
 BEGIN:VCARD
-VERSION:4.0
+VERSION:3.0
 SOURCE:https://zick.kim/vcard.vcf
-PHOTO;PNG:https://zick.kim/avatar.png
+REV:2019-10-13T21:29:39-0400
+
+PHOTO;VALUE=URI;TYPE=PNG:https://zick.kim/avatar.png
 KEY;PGP:https://zick.kim/rummik.asc
-REV:2019-09-21T17:13:17-0400
 
 FN:*Kim Zick
 N:Zick;*Kim;;;
 NICKNAME:rummik
 
-TZ:America/New_York
+TZ:-0400
 LANG:en-US
 
-TEL;CELL:413-648-7531
+TEL;CELL:+1 (413) 648-7531
 EMAIL;PREF;HOME:kimberly.zick@gmail.com
 
-FBURL:https://calendar.google.com/calendar/ical/kimberly.zick%40gmail.com/public/basic.ics
+FBURL:https://zick.kim/calendar.ics
 
 URL:https://github.com/rummik
 URL:https://gitlab.com/rummik
@@ -25,22 +26,11 @@ URL:https://zick.kim
 IMPP:discord:*Kim#0626
 IMPP:instagram:iotasamurai
 IMPP:irc:kim@irc.freenode.net
-IMPP:irc:kim@irc.oftc.net
-IMPP:irc:rummik@irc.rizon.net
 IMPP:keybase:rummik
 IMPP:mastodon:rummik@awoo.pub
 IMPP:signal:4136487531
 IMPP:twitch:rummik
 IMPP:twitter:iotasamurai
-IMPP:wire:rummik
 IMPP:youtube:rummik
-
-INTEREST;LEVEL=high:assistive-tech
-INTEREST;LEVEL=high:biohacking
-INTEREST;LEVEL=high:technology
-
-EXPERTISE;LEVEL=expert:linux
-EXPERTISE;LEVEL=expert:zsh
-EXPERTISE;LEVEL=expert:javascript
 
 END:VCARD
