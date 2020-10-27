@@ -27,28 +27,32 @@ Public Key | [739C F2CB EF82 02E5](https://zick.kim/rummik.asc)
 
  Skills
 --------
-             Languages | JavaScript (browsers, [Node.js][]), shell (Zsh, Bash),
-                         PHP, SQL (MySQL, Postgres), JSON, Twig, [Swig][], EJS,
-                         Savant3, CSS (CSS3, Less, Stylus)
+             Languages | TypeScript (TSX), JavaScript (browsers, [Node.js][], JSX), shell
+                         (Zsh, Bash), PHP, SQL (MySQL, Postgres), JSON, Twig,
+                         [Swig][], EJS, Savant3, CSS (CSS3, Less, Stylus)
       Markup Languages | Markdown (vanilla, GitHub), YAML, XML, HTML (XHTML,
                          HTML5), JSONML
         Source Control | Git, Mercurial
          Documentation | JSDoc, Doxygen
-               Testing | Travis CI, Circle CI, [Gulp][], [Grunt][], Karma,
+               Testing | Concourse, Travis CI, Circle CI, [Gulp][], [Grunt][], Karma,
                          [Mocha][], [Dalek.js][], [JSHint][], Cucumber (Ruby),
                          [Webdriver.io][]
-Libraries & Frameworks | Underscore, [Lodash][], jQuery, [Zepto][], [Dabble][],
-                         Socket.io, Bootstrap, Slim, [Express][], Propel,
-                         [Browserify][], Angular, [VanillaJS][]
+Libraries & Frameworks | React, Angular, Underscore, [Lodash][], jQuery,
+                         [Zepto][], [Dabble][], Socket.io, Bootstrap, Slim,
+                         [Express][], Propel, [Browserify][], Angular,
+                         [VanillaJS][]
           HTTP Servers | Nginx (with PHP-FPM), Apache 2
       Database Servers | MySQL, Postgres, MongoDB, SQLite
      Operating Systems | Linux (Debian, Ubuntu, CentOS, NixOS)
-                  Misc | [CloudFlare][], [NPM][], [Yarn][], [Composer][],
-                         [Antigen][]
+                  Misc | [CloudFlare][], [NPM][], [Yarn][], [Composer][], [Antigen][]
 
 
  Work History
 --------------
+
+### Senior DevOps Engineer - Carnegie Robotics (September 2019 → August 2020)
+
+### Software Engineer III - AccelaSchool (March 2019 -> August 2019)
 
 ### Software Engineer, Development Lead - Clarabyte (February 2016 → June 2018)
 Lead a team of engineers through the process of developing new data security
