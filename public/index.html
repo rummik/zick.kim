@@ -143,6 +143,7 @@
       text-decoration: none;
       color: #22112a;
       overflow: hidden;
+      background: var(--bg-color);
     }
       .links a p {
         height: 0;
@@ -157,6 +158,9 @@
       .links a svg path {
         fill: #22112a;
       }
+        .links a svg path ~ path {
+          fill: var(--bg-color);
+        }
 
     .links a:focus {
       flex-grow: 2;
@@ -176,34 +180,11 @@
           }
         }
 
-  a[href*="gitlab"] {
-    background: #ff74ef;
-  }
-
-  a[href*="ko-fi"] {
-    /*background: #fee900;*/
-    background: #ff6639;
-  }
-    a[href*="ko-fi"] svg path ~ path {
-      /*fill: #fee900;*/
-      fill: #ff6639;
-    }
-
-  a[href*="twitch"] {
-    background: #fee900;
-  }
-
-  /*a[href*="vcard.vcf"] {
-    background: #ff6639;
-  }*/
-
-  a[href*="keybase"] {
-    background: #88e027;
-  }
-
-  a[href*="mas.to"] {
-    background: #46d5ce;
-  }
+  a:nth-child(1) { --bg-color: #ff74ef; }
+  a:nth-child(2) { --bg-color: #ff6639; }
+  a:nth-child(3) { --bg-color: #fee900; }
+  a:nth-child(4) { --bg-color: #88e027; }
+  a:nth-child(5) { --bg-color: #46d5ce; }
 
   @media screen and (orientation: landscape) {
     .links {
