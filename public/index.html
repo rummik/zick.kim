@@ -3,6 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="vcard" href="vcard.vcf">
 <link rel="me" href="https://mas.to/@rummik">
+<link rel="me" href="https://mastodon.social/@rummik">
+<link rel="me" href="https://kind.social/@rummik">
 <link rel="me" href="https://twitter.com/iotasamurai">
 <link rel="me" href="https://github.com/rummik">
 <link rel="me" href="https://gitlab.com/iotasamurai">
@@ -14,7 +16,7 @@
 -->
 
 <div class="links">
-  <a rel="me" href="https://mastodon.social/@rummik">
+  <a rel="me" href="https://kind.social/@rummik">
     <svg viewBox="0 124 1536 1647">
       <path d="M1503.5 1111.5c-22.5 116.5-202.5 243.5-408.5 267.5-107.5 12.5-213.5 24.5-326.5 19.5-184.5-8.5-330.5-44.5-330.5-44.5 0 17.5 1.5 35.5 3.5 51.5 24.5 182.5 180.5 193.5 329.5 198.5 149.5 5.5 283.5-36.5 283.5-36.5l6.5 135.5s-104.5 56.5-291.5 66.5c-102.5 5.5-230.5-2.5-379.5-42.5C65.5 1641.5 10.5 1297.5 1.5 948.5-1.5 844.5.5 746.5.5 664.5.5 307.5 234.5 202.5 234.5 202.5c118.5-54.5 320.5-76.5 531.5-78.5h5.5c210.5 1.5 413.5 24.5 531.5 78.5 0 0 234.5 104.5 234.5 461.5 0 0 2.5 263.5-32.5 446.5zm-243.5-418.5c0-88.5-21.5-159.5-67.5-210.5-46.5-51.5-107.5-78.5-183.5-78.5-87.5 0-154.5 33.5-198.5 101.5L768 576l-42.5-71.5c-43.5-67.5-110.5-101.5-198.5-101.5-75.5 0-136.5 26.5-183.5 78.5-45.5 51.5-67.5 122.5-67.5 210.5v432.5h171.5V705.5c0-88.5 37.5-133.5 111.5-133.5 82.5 0 123.5 53.5 123.5 158.5v229.5h170.5V730.5c0-105.5 41.5-158.5 123.5-158.5 74.5 0 111.5 44.5 111.5 133.5v419.5h171.5V692.5z">
     </svg>
@@ -91,159 +93,190 @@
 </div>
 
 <script>
-  for (let el of document.querySelectorAll('a')) {
+  for (let element of document.querySelectorAll('a')) {
     let counter = 0;
     let touched = false;
 
-    el.addEventListener('touchstart', () => {
+    element.addEventListener('touchstart', () => {
       touched = true;
       counter++;
-      el.focus();
+      element.focus();
     });
 
-    el.addEventListener('blur', () => {
+    element.addEventListener('blur', () => {
       touched = false;
       counter = 0;
     });
 
-    el.addEventListener('click', event => {
+    element.addEventListener('click', event => {
       if (touched && counter < 2) {
         event.preventDefault();
       }
     });
   }
+
+  const codes = [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ];
+  const buffer = new Array(codes.length);
+  document.addEventListener('keyup', event => {
+    buffer.splice(0, codes.length, ...buffer.slice(codes.length - 1), event.code);
+
+    if (buffer.join('') == codes.join('')) {
+      location.href = atob('aHR0cHM6Ly9wbmsuZGV2Lz9yZWY9emljay5raW0=');
+    }
+  });
 </script>
 
 <style>
+  :root {
+    --color: #22112a;
+    --transition-duration: 0.25s;
+  }
+
   html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: #22112a;
+    background: var(--color);
     font-family: 'Architects Daughter', cursive;
   }
 
   .links {
     display: flex;
-    background: #22112a;
+    background: var(--color);
     height: 100vh;
-  }
-    .links a, .links a p {
-      transition-duration: 0.25s;
-    }
 
-    .links a {
+    a {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-grow: 1;
       flex-basis: 8%;
       transition-property: flex-grow;
+      transition-duration: var(--transition-duration);
       text-align: center;
       text-decoration: none;
-      color: #22112a;
+      color: var(--color);
       overflow: hidden;
       background: var(--bg-color);
-    }
-      .links a p {
+
+
+      &:nth-child(1) { --bg-color: #ff74ef; }
+      &:nth-child(2) { --bg-color: #ff6639; }
+      &:nth-child(3) { --bg-color: #fee900; }
+      &:nth-child(4) { --bg-color: #88e027; }
+      &:nth-child(5) { --bg-color: #46d5ce; }
+
+      p {
         height: 0;
         opacity: 0;
         transition-property: height, margin, opacity;
+        transition-duration: var(--transition-duration);
       }
 
-      .links a b {
+      b {
         display: block;
       }
 
-      .links a svg path {
-        fill: #22112a;
-      }
-        .links a svg path ~ path {
+      svg path {
+        fill: var(--color);
+
+        & ~ path {
           fill: var(--bg-color);
         }
+      }
 
-    .links a:focus {
-      flex-grow: 2;
-    }
-      @media screen and (pointer: fine) {
-        .links a:hover {
+      /* @media (pointer: coarse) { */
+        &:focus {
           flex-grow: 2;
-        }
-      }
 
-      .links a:focus p {
-        opacity: 1;
-      }
-        @media screen and (pointer: fine) {
-          .links a:hover p {
+          p {
             opacity: 1;
           }
         }
+      /* } */
 
-  a:nth-child(1) { --bg-color: #ff74ef; }
-  a:nth-child(2) { --bg-color: #ff6639; }
-  a:nth-child(3) { --bg-color: #fee900; }
-  a:nth-child(4) { --bg-color: #88e027; }
-  a:nth-child(5) { --bg-color: #46d5ce; }
+      @media (pointer: fine) {
+        &:hover {
+          flex-grow: 2;
 
-  @media screen and (orientation: landscape) {
+          p {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+
+  @media (orientation: landscape) {
     .links {
       flex-direction: row;
-    }
-      .links a {
+
+      a {
         flex-direction: column;
-      }
-        .links a svg {
+
+        svg {
           height: 8vw;
         }
 
-        .links a p {
+        p {
           width: 15vw;
         }
 
-        .links a:focus p {
-          height: 4em;
+        /* @media (pointer: coarse) { */
+          &:focus p {
+            height: 4em;
+          }
+        /* } */
+
+        @media (pointer: fine) {
+          &:hover p {
+            height: 4em;
+          }
         }
-  }
-    @media screen and (orientation: landscape) and (pointer: fine) {
-      .links a:hover p {
-        height: 4em;
       }
     }
+  }
 
-  @media screen and (orientation: portrait) {
+  @media (orientation: portrait) {
     .links {
       flex-direction: column;
-    }
-      .links a {
+
+      a {
         flex-direction: row;
-      }
-        .links a svg {
+
+        svg {
           width: 10vh;
         }
-          .links a[href*="ko-fi"] svg {
-            width: 12.5vh;
-            margin-right: -2.5vh;
-          }
 
-        .links a p {
+        &[href*="ko-fi"] svg {
+          width: 12.5vh;
+          margin-right: -2.5vh;
+        }
+
+        p {
           width: 50vw;
           height: auto;
           margin: -5vh -55vw -5vh 5vw;
           vertical-align: middle;
         }
 
-        .links a:focus p {
-          margin: -5vh 0 -5vh 5vw;
+        /* @media (pointer: coarse) { */
+          &:focus p {
+            margin: -5vh 0 -5vh 5vw;
+          }
+        /* } */
+
+        @media (pointer: fine) {
+          &:hover p {
+            margin: -5vh 0 -5vh 5vw;
+          }
         }
-  }
-    @media screen and (orientation: portrait) and (pointer: fine) {
-      .links a:hover p {
-        margin: -5vh 0 -5vh 5vw;
       }
     }
+  }
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
