@@ -1,0 +1,14 @@
+{
+  "name": "zick-kim",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --live-reload",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.12.0"
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
+}
