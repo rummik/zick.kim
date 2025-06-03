@@ -1,16 +1,35 @@
 <!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
-<title>resume</title>
+<title>resume.md</title>
 
 <noscript>The custom Markdown parser on this page requires JavaScript to be enabled.</noscript>
 
 <div class="content"><div class="download-pdf"><a href="resume.pdf" class="pdf">Download PDF</a></div></div>
-<div class="toggle-source">[<a href="#" id="view-source">view source</a><a href="#" id="view-styled">show styled</a>]</div>
+<div class="toggle-source">
+  &lt;<a href="#view-source" id="view-source">#view source</a><a href="#view-styled" id="view-styled">#view-styled</a>&gt;
+</div>
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,700,400italic">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../common.css" />
 <style>
-html, body {
+:root {
+  color-scheme: only light;
+  --foreground: var(--theme-light-foreground);
+  --background: var(--theme-light-background);
+}
+
+@counter-style double-chevron {
+  system: cyclic;
+  symbols: '»';
+  suffix: ' ';
+}
+
+html, body, dl, dt, dd, ul, li {
   margin: 0;
   padding: 0;
 }
@@ -18,7 +37,6 @@ html, body {
 body {
   font-size: 16px;
   padding-bottom: 2em;
-  font-family: 'Ubuntu Mono', monospace;
 }
 
 .toggle-source {
@@ -26,401 +44,369 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 1em;
-  line-height: 1em;
+  line-height: 2em;
   text-align: center;
-  padding: 0.5em 0;
   background: inherit;
+  font-family: 'Fira Code', monospace;
+
+  /* &::before {
+    content: ' NORMAL   master  ~2  public/resume/resume.md                                                 utf-8     markdown  10%   18:31 ';
+    display: block;
+  } */
+
+  a {
+    color: var(--b24-blue) !important;
+    text-decoration: none;
+
+    :has(:target) &:target,
+    :not(:has(:target)) &:not(:first-of-type) {
+      display: none;
+    }
+  }
 }
 
-.toggle-source a {
-  color: #729FCF !important;
-  text-decoration: none;
-}
-
-dt {
+/* dt {
   font-size: inherit !important;
-}
+} */
 
-.styled .toggle-source #view-styled {
-  display: none;
+.content {
+  position: relative;
 }
-
-.source .toggle-source #view-source {
-  display: none;
-}
-
 
 /* styles for styled mode */
-.styled {
-  background: #fff;
-  color: #471f0e;
+body:not(:has(#view-source:target)) {
+  background: var(--background);
+  color: var(--foreground);
   line-height: 1.4em;
   text-align: justify;
   hyphens: auto;
-}
+  font-family: 'Fira Sans', sans-serif;
 
-.styled a {
-  color: #ff6639;
-  text-decoration: none;
-}
+  a {
+    color: var(--b24-bright-red);
+    text-decoration: none;
+  }
 
-.styled .download-pdf {
-  position: absolute;
-  right: 10px;
-  width: 40px;
-}
+  .download-pdf {
+    scale: 1.5;
+    transform-origin: top right;
+    position: fixed;
+    top: 0;
+    right: max(2em, calc(50% - 400px));
+    width: 40px;
+    font-family: 'Fira Code', monospace;
 
-.styled .pdf {
-  background: #f0f0ff;
-  width: 40px;
-  height: 25px;
-  border-radius: 3px;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.15);
-  position: fixed;
-  display: block;
-  top: 0;
-  font-size: 0;
-  line-height: 1em;
-  color: #333;
-  overflow: hidden;
-}
+    .pdf {
+      background: #f0f0ff;
+      width: 40px;
+      height: 25px;
+      border-radius: 3px;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.15);
+      position: fixed;
+      display: block;
+      top: 0;
+      font-size: 0;
+      line-height: 1em;
+      color: var(--b24-light-gray);
+      overflow: hidden;
 
-.styled .pdf:before {
-  content: '↓';
-  display: block;
-  position: absolute;
-  bottom: -28px;
-  line-height: 1em;
-  left: 50%;
-  font-size: 160px;
-  font-family: 'Ubuntu Mono', monospace;
-  width: 160px;
-  margin-left: -80px;
-  text-align: center;
-  color: #e3e3e3;
-}
+      &::before {
+        content: '↓';
+        display: block;
+        position: absolute;
+        bottom: -28px;
+        line-height: 1em;
+        left: 50%;
+        font-size: 160px;
+        width: 160px;
+        margin-left: -80px;
+        text-align: center;
+        color: #e3e3e3;
+      }
 
-.styled .pdf:after {
-  content: 'pdf';
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 12px;
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-}
+      &::after {
+        content: 'pdf';
+        font-size: 12px;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
 
-.styled .content {
-  position: relative;
-  max-width: 800px;
-  margin: auto;
-  overflow: hidden;
-  font-family: 'Ubuntu', sans-serif;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin: 0 auto 20px;
-  padding-top: 20px;
-}
+  .content {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    padding: 2em 1em 2em;
+  }
 
-.styled .toggle-source {
-  padding-top: 0;
-  box-shadow: 0 0 2em 1em #fff;
-}
+  .toggle-source {
+    padding-top: 0;
+    box-shadow: 0 0 2em 1em var(--background);
+  }
 
-.styled .line,
-.styled .comment,
-.styled .link-href,
-.styled .link-ref,
-.styled .link-ref-name,
-.styled .link-ref-url,
-.styled .header-hash,
-.styled .header-line,
-.styled .list,
-.styled .image .src,
-.styled .image .alt,
-.styled .template-source {
-  display: none;
-}
+  .line,
+  .comment,
+  .link-href,
+  .link-ref,
+  .link-ref-name,
+  .link-ref-url,
+  .header-hash,
+  .header-line,
+  .list,
+  .image .src,
+  .image .alt,
+  .template-source {
+    display: none;
+  }
 
-.styled img:nth-of-type(1) {
-  height: 2.5em;
-  vertical-align: top;
-  margin-right: 0.2em;
-}
+  img:nth-of-type(1) {
+    height: 2.5em;
+    vertical-align: top;
+    margin-right: 0.2em;
+    display: none;
+  }
 
-/* headers */
-.styled h1 {
-  font-size: 4em;
-  line-height: 2.5em;
-}
+  /* headers */
+  h1 {
+    font-size: 4em;
+    line-height: 2.5em;
+  }
 
-.styled h2, .styled h3 {
-  margin-top: 1.7em;
-}
+  h2, h3 {
+    margin-top: 1.7em;
+  }
 
-/* lists */
-.styled dl {
-  overflow: hidden;
-}
+  /* lists */
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0 .5ch;
 
-.styled dl:nth-of-type(1) {
-  max-width: 700px;
-  margin: auto;
-}
+    &:nth-of-type(1) {
+      grid-template-columns: repeat(4, max-content);
+      justify-content: center;
 
-.styled dl:nth-of-type(1) di {
-  overflow: hidden;
-  width: 50%;
-}
+      dd:nth-of-type(2n-1) {
+        padding-right: 8ch;
+      }
+    }
+  }
 
-.styled dl:nth-of-type(1) di:nth-of-type(2n-1) {
-  float: left;
-}
+  dt {
+    justify-self: end;
 
-.styled dl:nth-of-type(1) di:nth-of-type(2n) {
-  float: right;
-}
+    &::after {
+      content: ':';
+    }
+  }
 
-.styled dt {
-  float: left;
-  text-align: right;
-}
+  dt, dd {
+    display: inline;
+  }
 
-.styled dt:after {
-  content: ': ';
-  white-space: pre;
-}
+  ul {
+    margin-left: 1em;
+    list-style: double-chevron;
+  }
 
-.styled dd {
-  clear: right;
-}
+  dl .template-result {
+    vertical-align: super;
+    font-size: xx-small;
+    font-style: italic;
+    display: inline-block;
+    margin-top: -5px;
+  }
 
-.styled dt,
-.styled dd {
-  margin-bottom: 5px;
-}
+  dl .template-result::after {
+    content: '+';
+  }
 
-.styled ul,
-.styled li {
-  padding-left: 0;
-  list-style: none;
-}
+  /* Make things a bit responsive. */
+  @media screen and (max-width: 699px) {
+    h1 {
+      font-size: 3em;
+    }
 
-.styled li:before {
-  content: '»';
-}
+    dl:nth-of-type(1) dd:nth-of-type(2n-1) {
+      padding-right: 0;
+    }
+  }
 
-.styled dl .template-result {
-  vertical-align: super;
-  font-size: xx-small;
-  font-style: italic;
-  display: inline-block;
-  margin-top: -5px;
-}
+  @media screen and (max-width: 549px) {
+    h1 {
+      text-align: center;
 
-.styled dl .template-result:after {
-  content: '+';
-}
+      .image {
+        display: block;
+      }
 
+      img {
+        height: 270px !important;
+      }
+    }
+
+    dl:nth-of-type(1) {
+      grid-template-columns: repeat(2, max-content);
+      column-gap: 1ch;
+    }
+  }
+}
 
 /* styles for source mode */
-.source {
-  font-family: 'Ubuntu Mono', monospace;
-  background: #111;
-  color: #eee;
-}
+body:has(#view-source:target) {
+  color: var(--term-foreground);
+  background: var(--term-background-image);
+  font-family: 'Fira Code', monospace;
 
-.source .download-pdf {
-  display: none;
-}
-
-.source .toggle-source {
-  padding-top: 0;
-  box-shadow: 0 0 1.25em 1em #111;
-}
-
-.source .content {
-  white-space: pre;
-  padding: .5em;
-  position: relative;
-}
-
-.source .content:after {
-  content: '';
-  margin-left: 79ch;
-  width: 41ch;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background: -webkit-linear-gradient(left, #2e3436 1ch, transparent 1ch);
-  background-size: 20ch auto;
-}
-
-/* inline some block elements */
-.source p,
-.source ul,
-.source li,
-.source dl,
-.source dt,
-.source dd {
-  display: inline;
-  margin: 0;
-  padding: 0;
-}
-
-.source ul,
-.source li {
-  list-style: none;
-}
-
-/* images */
-.source .image img,
-.source .template-result {
-  display: none;
-}
-
-.source .image .alt:before,
-.source .image .alt:after,
-.source .image .src:before,
-.source .image .src:after {
-  color: #34E2E2;
-}
-
-.source .image .alt:before { content: '!['; }
-.source .image .alt:after { content: ']'; }
-.source .image .src:before { content: '('; }
-.source .image .src:after { content: ')'; }
-
-/* links */
-.source .quicklink:before,
-.source .quicklink:after,
-.source .link:before,
-.source .link:after,
-.source .link-href:before,
-.source .link-href:after,
-.source .link-ref:before,
-.source .link-ref:after,
-.source .link-ref-name:before,
-.source .link-ref-name:after {
-  color: #34E2E2;
-  text-decoration: none;
-}
-
-.source .quicklink:before { content: '<'; }
-.source .quicklink:after { content: '>'; }
-.source .link-href:before { content: '('; }
-.source .link-href:after { content: ')'; }
-.source .link:before,
-.source .link-ref-name:before,
-.source .link-ref:before { content: '['; }
-.source .link:after,
-.source .link-ref-name:after { content: ']'; }
-.source .link-ref:after { content: ']:'; }
-
-.source .link { color: #729FCF; }
-.source .link-ref-name,
-.source .link-ref { color: #8AE234; }
-
-.source .template-source { color: #34E2E2; }
-.source .template-source .action { color: #8AE234; }
-.source .template-source .argument { color: #AD7FA8; }
-
-.source a {
-  color: #AD7FA8;
-  text-decoration: none;
-}
-
-/* headers */
-.source h1,
-.source h2,
-.source h3 {
-  color: #AD7FA8;
-  font-size: inherit;
-  font-weight: inherit;
-  display: inline;
-}
-
-.source .header-line { color: #729FCF; }
-.source .header-hash { color: #EF2929; }
-
-/* lists */
-.source dt { color: #8AE234; }
-.source dt:after {
-  content: ' |';
-  color: #34E2E2;
-}
-
-.source li:before {
-  content: '-';
-  color: #FCE94F;
-}
-
-/* Comments */
-.source .comment { color: #34E2E2; }
-
-/* Line numbers */
-.source .line {
-  color: #FCE94F;
-  display: inline-block;
-  text-align: right;
-}
-
-/* I know responsive.  That makes me a designer? */
-@media screen and (max-width: 699px) {
-  .styled h1 {
-    font-size: 3em;
+  .download-pdf {
+    display: none;
   }
 
-  .styled dl:nth-of-type(1) {
-    max-width: 550px;
+  .toggle-source {
+    padding-top: 0;
+    box-shadow: 0 0 1.25em 1em #111;
   }
 
-  .styled dl:nth-of-type(1) dt {
-    text-align: left;
+  .toggle-source::after {
+    width: 100%;
   }
 
-  .styled dl:nth-of-type(1) dd {
-    clear: both;
-    margin-left: 30px !important;
-  }
-}
+  .content {
+    white-space: pre;
+    padding: .5em .5em 3em;
+    min-height: 100vh;
+    /* overflow: hidden; */
 
-@media screen and (max-width: 549px) {
-  .styled h1 {
-    text-align: center;
-  }
-
-  .styled h1 .image {
-    display: block;
-  }
-
-  .styled h1 img {
-    height: 270px !important;
-  }
-
-  .styled dl:nth-of-type(1) {
-    max-width: 270px;
-  }
-
-  .styled dl:nth-of-type(1) di {
-    float: none !important;
+    background-origin: content-box;
+    background-position-x: 79ch;
+    background-repeat: repeat-y;
+    background-image: linear-gradient(
+      90deg,
+      #2e3436 1ch,
+      transparent 1ch,
+      transparent 20ch,
+      #2e3436 20ch,
+      #2e3436 21ch,
+      transparent 21ch,
+      transparent 40ch,
+      #2e3436 40ch,
+      #2e3436 41ch,
+      transparent 41ch
+    );
   }
 
-  .styled dt {
-    text-align: left;
+  /* inline some block elements */
+  p, ul, li, dl, dt, dd {
+    display: inline;
+    margin: 0;
+    padding: 0;
   }
 
-  .styled dd {
-    clear: both;
-    margin-left: 10px !important;
+  ul, li {
+    list-style: none;
   }
 
+  /* images */
+  .image img,
+  .template-result {
+    display: none;
+  }
+
+  .image {
+    .alt::before,
+    .alt::after,
+    .src::before,
+    .src::after {
+      color: var(--b24-bright-cyan);
+    }
+
+    .alt::before { content: '!['; }
+    .alt::after { content: ']'; }
+    .src::before { content: '('; }
+    .src::after { content: ')'; }
+  }
+
+  /* links */
+  a {
+    color: var(--b24-bright-magenta);
+    text-decoration: none;
+
+    &::before, &::after {
+      color: var(--b24-bright-cyan);
+    }
+
+    &.quicklink {
+      &::before { content: '<'; }
+      &::after { content: '>'; }
+    }
+
+    &.link-href {
+      &::before { content: '('; }
+      &::after { content: ')'; }
+    }
+
+    &.link, &.link-ref, &.link-ref-name {
+      &::before { content: '['; }
+      &::after { content: ']'; }
+    }
+
+    &.link { color: var(--b24-bright-blue); }
+    &.link-ref,
+    &.link-ref-name { color: var(--b24-bright-green); }
+  }
+
+  .template-source { color: var(--b24-bright-cyan); }
+  .template-source .action { color: var(--b24-bright-green); }
+  .template-source .argument { color: var(--b24-magenta); }
+
+  /* headers */
+  h1, h2, h3 {
+    color: var(--b24-magenta);
+    font-size: inherit;
+    font-weight: inherit;
+    display: inline;
+  }
+
+  .header-line { color: var(--b24-bright-blue); }
+  .header-hash { color: var(--b24-red); }
+
+  /* lists */
+  dt {
+    color: var(--b24-bright-green);
+
+    &::after {
+      content: ' |';
+      color: var(--b24-bright-cyan);
+    }
+  }
+
+  li::before {
+    content: '-';
+    color: var(--b24-bright-yellow);
+  }
+
+  /* Comments */
+  .comment { color: var(--b24-bright-cyan); }
+
+  /* Line numbers */
+  .line {
+    color: var(--b24-bright-yellow);
+    display: inline-block;
+  }
 }
 
 /* Hide source toggle when printing, move things around a little */
 @media print {
+  :root {
+    color-scheme: only light;
+    --foreground: var(--theme-light-foreground);
+    --background: var(--theme-light-background);
+  }
+
   body {
     font-size: 16px;
   }
@@ -430,189 +416,157 @@ dt {
     display: none !important;
   }
 
-  .styled .content {
+  .content {
     width: 800px;
   }
 
-  .styled .comment {
+  .comment {
     display: inline-block;
     color: #fefefe;
     margin: 0;
+
+    .content > .comment {
+      display: block;
+
+      &:not(h2 ~ .comment) {
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+      }
+    }
   }
 
-  .styled h1 {
+  h1 {
     width: 90%;
     margin-top: 0;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .styled h2:not(:first-of-type) {
+  h2:not(#skills) {
     page-break-before: always;
   }
 
-  .styled p:nth-of-type(1),
-  .styled p:nth-of-type(2) {
+  p:nth-of-type(1),
+  p:nth-of-type(2) {
     font-size: 1.2em;
     line-height: 1.5em;
     width: 90%;
     margin: 0 auto 1em;
   }
 
-  .styled p:nth-of-type(2) {
+  p:nth-of-type(2) {
     margin: 0 auto 30px;
   }
 
-  .styled dl:nth-of-type(1) {
+  dl:nth-of-type(1) {
     font-size: 1.08em;
     line-height: 1.5em;
-    width: 726px !important;
-    max-width: 800px !important;
     margin-bottom: 2em !important;
   }
 
-  .styled dl:nth-of-type(1) di {
-    margin-left: -14px;
+  dl:nth-of-type(1) dd:nth-of-type(2n-1) {
+    padding-right: 4em;
   }
 }
 </style>
 
-<script>
-function forEach(self, fn) { return Array.prototype.forEach.call(self, fn); }
-function setImmediate(fn) { return setTimeout(fn, 1); }
-
-// JS hooks for toggling style (think a wordy `$('.toggle-source a').click(function() { ... });`)
-forEach(document.querySelectorAll('.toggle-source a'), element => {
-  element.onclick = function() {
-    document.body.className = this.getAttribute('id').replace('view-', '');
-    return false;
-  };
+<script type="module">
+// JS hooks for toggling style
+/*window.addEventListener('hashchange', () => {
+  const classList = document.body.classList;
+  classList.remove('source', 'styled');
+  classList.add(/source/.test(location.hash) ? 'source' : 'styled');
 });
 
-document.body.className = location.hash === '#source' ? 'source' : 'styled';
+window.dispatchEvent(new Event('hashchange'));*/
 
 // A slightly Markdown parser
-let xhr = new XMLHttpRequest();
+const response = await fetch('resume.md');
+const responseText = await response.text();
 
-xhr.open('GET', 'resume.md', true);
+const lines = responseText.match(/\n/g).length;
+const maxDigits = lines.toString().length;
+const content = document.querySelector('.content');
+const links = {};
 
-xhr.onreadystatechange = () => {
-  if (xhr.readyState != 4 || xhr.status != 200)
-    return;
+let line = 0;
 
-  let line = 0;
-  let lines = xhr.responseText.match(/\n/g).length;
-  let w = lines.toString().length;
-  let content = document.querySelector('.content');
-  let links = {};
+// Markdown-ish parser -- includes some extra things, slightly clobbers a few things, lacks other things, has some legacy things
+content.innerHTML += responseText
+  // Images
+  .replace(/!\[([^\]]+)\]\(([^\)]+)\)/g, '<span class="image"><span class="alt">$1</span><span class="src">$2</span><img src="$2" alt="$1"></span>')
 
-  // Markdown-ish parser -- includes some extra things, slightly clobbers a few things, lacks other things
-  content.innerHTML += xhr.responseText
-    // Images
-    .replace(/!\[([^\]]+)\]\(([^\)]+)\)/g, '<span class="image"><span class="alt">$1</span><span class="src">$2</span><img src="$2" alt="$1"></span>')
+  // Links
+  .replace(/<(?!\/)([^>\s]+)>/g, (_, link) =>
+    `<a href="${/^[^:]+@.+$/.test(link) ? `mailto:${link}` : link}" class="quicklink">${link}</a>`
+  )
 
-    // Links
-    .replace(/<(?!\/)([^>\s]+)>/g, (g, match) => {
-      let link = /^[^:]+@.+$/.test(match) ? 'mailto:' + match : match;
-      return `<a href="${link}" class="quicklink">${match}</a>`;
-    })
+  .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" class="link">$1</a><a href="$2" class="link-href">$2</a>')
 
-    .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" class="link">$1</a><a href="$2" class="link-href">$2</a>')
+  .replace(/\[([^\]]+)\]:(.+)/g, (_, name, url) => {
+    const trimmed = url.replace(/^\s+|\s+$/g, '');
 
-    .replace(/\[([^\]]+)\]:(.+)/g, (m, name, url) => {
-      let trimmed = url.replace(/^\s+|\s+$/g, '');
-      links[name.replace(/\s+/g, ' ')] = trimmed;
+    links[name.replace(/\s+/g, ' ')] = trimmed;
 
-      return `<a class="link-ref" href="${trimmed}">${name}</a>` +
-             `<a class="link-ref-url" href="${trimmed}">${url}</a>`;
-    })
+    return `<a class="link-ref" href="${trimmed}">${name}</a>` +
+           `<a class="link-ref-url" href="${trimmed}">${url}</a>`;
+  })
 
-    .replace(/\[([^\]]+)\]\[([^\]]*)\]/g, (r, title, name) => {
-      let url = links[(name.length ? name : title).replace(/\s+/g, ' ')] || '#';
+  .replace(/\[([^\]]+)\]\[([^\]]*)\]/g, (_, title, name) => {
+    const url = links[(name.length ? name : title).replace(/\s+/g, ' ')] || '#';
 
-      return `<a class="link" href="${url}" ${name ? `title="${name}"` : ''}>${title}</a>` +
-             `<a class="link-ref-name" href="${url}">${name}</a>`;
-    })
+    return `<a class="link" href="${url}" ${name ? `title="${name}"` : ''}>${title}</a>` +
+           `<a class="link-ref-name" href="${url}">${name}</a>`;
+  })
 
-    // Headers
-    .replace(/^(.+)\n(=+)$/mg, '<h1>$1</h1>\n<span class="header-line">$2</span>')
-    .replace(/^(.+)\n(-+)$/mg, '<h2>$1</h2>\n<span class="header-line">$2</span>')
-    .replace(/^(#+)(.+)$/mg, (r, hash, text) => {
-      let n = hash.length;
-      return '<span class="header-hash">' + hash + '</span><h' + n + '>' + text + '</h' + n + '>';
-    })
+  // Headers
+  .replace(/^(?<text>.+)\n(?<line>[=-]+)$/mg, (_, text, line, ...args) => {
+    const level = line[0] === '=' ? 1 : 2;
+    const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    console.log(args.length, args.pop());
+    return `<h${level} id="${id}">${text}</h${level}>\n<span class="header-line">${line}</span>`;
+  })
+  .replace(/^(#+)(.+)$/mg, (_, hashes, text) => {
+    let level = hashes.length;
+    return `<span class="header-hash">${hashes}</span><h${level}>${text}</h${level}>`;
+  })
 
-    // Lists...don't ask.  It's lazy
-    .replace(/^(\s*)(?!-->)(?:[-*])((?:[^|\n]|\n )+)/mg, '$1<li>$2</li>')
-    .replace(/((?:<li>(?:.|\n)+?<\/li>\n?)+)/g, '<ul>$1</ul>')
+  // Lists...don't ask.  It's lazy
+  .replace(/^(\s*)(?!-->)(?:[-*])((?:[^|\n]|\n )+)/mg, '$1<li>$2</li>')
+  .replace(/((?:<li>(?:.|\n)+?<\/li>\n?)+)/g, '<ul>$1</ul>')
 
-    // Shh.  <di> isn't part of HTML5 spec, but I won't tell if you don't ;)
-    // For reference, it was intended to be part of the XHTML 2.0 spec, which never went anywhere
-    .replace(/^(.+?)(\s*)\|((?:[^|\n]|\n )+)$/mg, '<di><dt>$1</dt><dd>$3</dd></di>')
-    .replace(/((?:<di><dt>(?:.|\n)+?<\/dt><dd>(?:.|\n)+?<\/dd><\/di>\n?)+)/g, '<dl>$1</dl>')
+  // Definition lists.  I'm probably using this wrong, but it works
+  .replace(/^(.+?)(\s*)\|((?:[^|\n]|\n )+)$/mg, '<dt>$1</dt><dd>$3</dd>')
+  .replace(/((?:<dt>(?:.|\n)+?<\/dt><dd>(?:.|\n)+?<\/dd>\n?)+)/g, '<dl>$1</dl>')
 
-    // HTML comments
-    .replace(/<(!--(.|[\r\n])*?--)>/g, '<span class="comment">&lt;$1&gt;</span>')
+  // HTML comments
+  .replace(/<(!--(.|[\r\n])*?--)>/g, '<span class="comment">&lt;$1&gt;</span>')
 
-    // Paragraphs
-    .replace(/^(\s?\w(?:.|\n *[^\r\n])+)/mg, '<p>$1</p>')
+  // Paragraphs
+  .replace(/^(\s?\w(?:.|\n *[^\r\n])+)/mg, '<p>$1</p>')
 
-    // ...Templating.  Not part of Markdown, just conveniently placed here
-    .replace(/\{since:([^}]+)\}/g, (m, argument) => {
-      let result = (new Date().getYear() + 1900) - (+argument);
+  // ...Templating.  Not part of Markdown, just conveniently placed here
+  .replace(/\{since:([^}]+)\}/g, (_, year) => {
+    let result = (new Date().getFullYear()) - parseInt(year, 10);
 
-      if (isNaN(result)) {
-        result = argument;
-      }
+    if (isNaN(result)) {
+      result = year;
+    }
 
-      return '<span class="template">' +
-          '<span class="template-source">{' +
-            '<span class="action">since</span>:' +
-            '<span class="argument">' + argument + '</span>' +
-          '}</span>' +
-          '<span class="template-result">' +
-            result +
-          '</span>' +
-        '</span>';
-    })
+    return '<span class="template">' +
+        '<span class="template-source">{' +
+          '<span class="action">since</span>:' +
+          '<span class="argument">' + year + '</span>' +
+        '}</span>' +
+        '<span class="template-result">' +
+          result +
+        '</span>' +
+      '</span>';
+  })
 
-    // Line numbers...it's better not to ask how much of a mess this makes
-    .replace(/^/mg, () => {
-      let l = (++line).toString();
-      return '<span class="line">' + (new Array(w - l.length + 1).join(' ')) + l + '</span> ';
-    });
-
-  // Sillyness to make some bits line up cleanly.
-  setImmediate(() => {
-    let span = content.appendChild(document.createElement('span'));
-    span.style.display = 'inline-block';
-
-    forEach(document.querySelectorAll('.content dl'), (dl, n) => {
-      let max = 0;
-
-      forEach(dl.querySelectorAll('dt'), dt => {
-        span.innerHTML = dt.innerHTML + ':&nbsp;';
-        max = Math.max(span.clientWidth + 10, max);
-      });
-
-      let _dl = '.styled dl:nth-of-type(' + (n + 1) + ')';
-
-      document.styleSheets[1].insertRule(
-        _dl + ' dt {' +
-          'width: ' + max + 'px;' +
-        '}',
-      0);
-
-      document.styleSheets[1].insertRule(
-        _dl + ' dd {' +
-          'margin-left: ' + (max + 5) + 'px;' +
-        '}',
-      0);
-    });
-
-    content.removeChild(span);
-  });
-};
-
-xhr.send();
+  // Line numbers...it's better not to ask how much of a mess this makes
+  .replace(/^/mg, () =>
+    `<span class="line">${(++line).toString().padStart(maxDigits, ' ')}</span> `
+  );
 </script>

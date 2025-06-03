@@ -93,188 +93,234 @@
 </div>
 
 <script>
-  for (let element of document.querySelectorAll('a')) {
-    let counter = 0;
-    let touched = false;
+for (let element of document.querySelectorAll('a')) {
+  let counter = 0;
+  let touched = false;
 
-    element.addEventListener('touchstart', () => {
-      touched = true;
-      counter++;
-      element.focus();
-    });
+  element.addEventListener('touchstart', () => {
+    touched = true;
+    counter++;
+    element.focus();
+  });
 
-    element.addEventListener('blur', () => {
-      touched = false;
-      counter = 0;
-    });
+  element.addEventListener('blur', () => {
+    touched = false;
+    counter = 0;
+  });
 
-    element.addEventListener('click', event => {
-      if (touched && counter < 2) {
-        event.preventDefault();
-      }
-    });
-  }
-
-  const codes = [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ];
-  const buffer = new Array(codes.length);
-  document.addEventListener('keyup', event => {
-    buffer.splice(0, codes.length, ...buffer.slice(codes.length - 1), event.code);
-
-    if (buffer.join('') == codes.join('')) {
-      location.href = atob('aHR0cHM6Ly9wbmsuZGV2Lz9yZWY9emljay5raW0=');
+  element.addEventListener('click', event => {
+    if (touched && counter < 2) {
+      event.preventDefault();
     }
   });
+}
+
+{
+  let KeyCode = {
+    KeyA: 65,
+    KeyB: 66,
+    KeyH: 72,
+    KeyJ: 74,
+    KeyK: 75,
+    KeyL: 76,
+    ArrowUp: 38,
+    ArrowDown: 40,
+    ArrowLeft: 37,
+    ArrowRight: 39,
+  };
+
+  let matchers = [
+    [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
+    [ 75, 75, 74, 74, 72, 76, 72, 76, 66, 65 ],
+  ];
+
+  let buffer = new Array(matchers.at(0).length).fill(0);
+  document.addEventListener('keyup', event => {
+    buffer.splice(0, buffer.length, ...buffer.slice(1), KeyCode[event.code]);
+
+    for (let match of matchers) {
+      if (buffer.join('') == match.join('')) {
+        location.href = atob('aHR0cHM6Ly9wbmsuZGV2Lz9yZWY9emljay5raW0=');
+      }
+    }
+  });
+}
 </script>
 
+<!-- <link rel="stylesheet" href="common.css" /> -->
 <style>
-  :root {
-    --color: #22112a;
-    --transition-duration: 0.25s;
-  }
+:root {
+  /* color-scheme: only light; */
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: var(--color);
-    font-family: 'Architects Daughter', cursive;
-  }
+  --base00: #21222a; /* Background */
+  --base12: #ff6639; /* Bright Red */
+  --base13: #fee900; /* Bright Yellow */
+  --base14: #88e027; /* Bright Green */
+  --base15: #46d5ce; /* Bright Cyan */
+  --base17: #ff74ef; /* Bright Magenta / Purple */
 
-  .links {
+  --b24-background:     var(--base00);
+
+  --b24-bright-red:     var(--base12);
+  --b24-bright-yellow:  var(--base13);
+  --b24-bright-green:   var(--base14);
+  --b24-bright-cyan:    var(--base15);
+  --b24-bright-magenta: var(--base17);
+
+  --background: var(--b24-background);
+
+  --orange:     var(--b24-bright-red);
+  --yellow:     var(--b24-bright-yellow);
+  --green:      var(--b24-bright-green);
+  --cyan:       var(--b24-bright-cyan);
+  --magenta:    var(--b24-bright-magenta);
+
+  --transition-duration: 0.25s;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  font-family: 'Architects Daughter', cursive;
+}
+
+.links {
+  display: flex;
+  background: var(--background);
+  height: 100vh;
+
+  a {
     display: flex;
-    background: var(--color);
-    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 8%;
+    transition-property: flex-grow;
+    transition-duration: var(--transition-duration);
+    text-align: center;
+    text-decoration: none;
+    color: var(--background);
+    overflow: hidden;
+    background: var(--a-color);
+
+
+    &:nth-child(1) { --a-color: var(--magenta); }
+    &:nth-child(2) { --a-color: var(--orange); }
+    &:nth-child(3) { --a-color: var(--yellow); }
+    &:nth-child(4) { --a-color: var(--green); }
+    &:nth-child(5) { --a-color: var(--cyan); }
+
+    p {
+      height: 0;
+      opacity: 0;
+      transition-property: height, margin, opacity;
+      transition-duration: var(--transition-duration);
+    }
+
+    b {
+      display: block;
+    }
+
+    svg path {
+      fill: var(--background);
+
+      & ~ path {
+        fill: var(--a-color);
+      }
+    }
+
+    /* @media (pointer: coarse) { */
+      &:focus {
+        flex-grow: 2;
+
+        p {
+          opacity: 1;
+        }
+      }
+    /* } */
+
+    @media (pointer: fine) {
+      &:hover {
+        flex-grow: 2;
+
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+
+@media (orientation: landscape) {
+  .links {
+    flex-direction: row;
 
     a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-grow: 1;
-      flex-basis: 8%;
-      transition-property: flex-grow;
-      transition-duration: var(--transition-duration);
-      text-align: center;
-      text-decoration: none;
-      color: var(--color);
-      overflow: hidden;
-      background: var(--bg-color);
+      flex-direction: column;
 
-
-      &:nth-child(1) { --bg-color: #ff74ef; }
-      &:nth-child(2) { --bg-color: #ff6639; }
-      &:nth-child(3) { --bg-color: #fee900; }
-      &:nth-child(4) { --bg-color: #88e027; }
-      &:nth-child(5) { --bg-color: #46d5ce; }
+      svg {
+        height: 8vw;
+      }
 
       p {
-        height: 0;
-        opacity: 0;
-        transition-property: height, margin, opacity;
-        transition-duration: var(--transition-duration);
-      }
-
-      b {
-        display: block;
-      }
-
-      svg path {
-        fill: var(--color);
-
-        & ~ path {
-          fill: var(--bg-color);
-        }
+        width: 15vw;
       }
 
       /* @media (pointer: coarse) { */
-        &:focus {
-          flex-grow: 2;
-
-          p {
-            opacity: 1;
-          }
+        &:focus p {
+          height: 4em;
         }
       /* } */
 
       @media (pointer: fine) {
-        &:hover {
-          flex-grow: 2;
-
-          p {
-            opacity: 1;
-          }
+        &:hover p {
+          height: 4em;
         }
       }
     }
   }
+}
 
+@media (orientation: portrait) {
+  .links {
+    flex-direction: column;
 
-  @media (orientation: landscape) {
-    .links {
+    a {
       flex-direction: row;
 
-      a {
-        flex-direction: column;
+      svg {
+        width: 10vh;
+      }
 
-        svg {
-          height: 8vw;
+      &[href*="ko-fi"] svg {
+        width: 12.5vh;
+        margin-right: -2.5vh;
+      }
+
+      p {
+        width: 50vw;
+        height: auto;
+        margin: -5vh -55vw -5vh 5vw;
+        vertical-align: middle;
+      }
+
+      /* @media (pointer: coarse) { */
+        &:focus p {
+          margin: -5vh 0 -5vh 5vw;
         }
+      /* } */
 
-        p {
-          width: 15vw;
-        }
-
-        /* @media (pointer: coarse) { */
-          &:focus p {
-            height: 4em;
-          }
-        /* } */
-
-        @media (pointer: fine) {
-          &:hover p {
-            height: 4em;
-          }
+      @media (pointer: fine) {
+        &:hover p {
+          margin: -5vh 0 -5vh 5vw;
         }
       }
     }
   }
-
-  @media (orientation: portrait) {
-    .links {
-      flex-direction: column;
-
-      a {
-        flex-direction: row;
-
-        svg {
-          width: 10vh;
-        }
-
-        &[href*="ko-fi"] svg {
-          width: 12.5vh;
-          margin-right: -2.5vh;
-        }
-
-        p {
-          width: 50vw;
-          height: auto;
-          margin: -5vh -55vw -5vh 5vw;
-          vertical-align: middle;
-        }
-
-        /* @media (pointer: coarse) { */
-          &:focus p {
-            margin: -5vh 0 -5vh 5vw;
-          }
-        /* } */
-
-        @media (pointer: fine) {
-          &:hover p {
-            margin: -5vh 0 -5vh 5vw;
-          }
-        }
-      }
-    }
-  }
+}
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -1,0 +1,157 @@
+
+
+/* Base 24 Colorscheme {{{ */
+
+:root {
+  --base11: #000000; /* Darkest Black */
+  --base10: #111217; /* Darker Black */
+  --base00: #21222a; /* Background */
+  --base01: #24252e; /* Black */
+  --base02: #262730; /* Bright Black */
+  --base03: #2f313c; /* Gray */
+  --base04: #464858; /* Light Gray */
+  --base05: #666a84; /* Foreground */
+  --base06: #bdbecb; /* White */
+  --base07: #ffffff; /* Bright White */
+
+  --base08: #de5324; /* Red */
+  --base09: #ff9f00; /* Orange */
+  --base0A: #dac90b; /* Yellow */
+  --base0B: #72ba22; /* Green */
+  --base0C: #28b1aa; /* Cyan */
+  --base0D: #6c7de0; /* Blue */
+  --base0E: #c270b9; /* Magenta / Purple */
+
+  --base0F: #d24240; /* Dark Red / Brown */
+
+  --base12: #ff6639; /* Bright Red */
+  --base13: #fee900; /* Bright Yellow */
+  --base14: #88e027; /* Bright Green */
+  --base15: #46d5ce; /* Bright Cyan */
+  --base16: #adbaff; /* Bright Blue */
+  --base17: #ff74ef; /* Bright Magenta / Purple */
+
+  --b24-darkest-black:  var(--base11);
+  --b24-darker-black:   var(--base10);
+  --b24-background:     var(--base00);
+  --b24-black:          var(--base01);
+  --b24-bright-black:   var(--base02);
+  --b24-gray:           var(--base03);
+  --b24-light-gray:     var(--base04);
+  --b24-foreground:     var(--base05);
+  --b24-white:          var(--base06);
+  --b24-bright-white:   var(--base07);
+
+  --b24-red:            var(--base08);
+  --b24-orange:         var(--base09);
+  --b24-yellow:         var(--base0A);
+  --b24-green:          var(--base0B);
+  --b24-cyan:           var(--base0C);
+  --b24-blue:           var(--base0D);
+  --b24-magenta:        var(--base0E);
+
+  --b24-dark-red:       var(--base0F);
+
+  --b24-bright-red:     var(--base12);
+  --b24-bright-yellow:  var(--base13);
+  --b24-bright-green:   var(--base14);
+  --b24-bright-cyan:    var(--base15);
+  --b24-bright-blue:    var(--base16);
+  --b24-bright-magenta: var(--base17);
+}
+
+/* }}} */
+
+
+/* Common Theme {{{ */
+
+:root {
+  --orange:  var(--b24-bright-red);
+  --yellow:  var(--b24-bright-yellow);
+  --green:   var(--b24-bright-green);
+  --cyan:    var(--b24-bright-cyan);
+  --blue:    var(--b24-bright-blue);
+  --magenta: var(--b24-bright-magenta);
+
+  --theme-light-foreground: #471f0e;
+  --theme-light-background: var(--b24-bright-white);
+
+  --theme-dark-foreground: var(--b24-bright-white);
+  --theme-dark-background: var(--b24-background);
+
+  color-scheme: light dark;
+
+  @supports not light-dark() {
+    @media (prefers-color-scheme: dark) {
+      --foreground: var(--theme-dark-foreground);
+      --background: var(--theme-dark-background);
+    }
+
+    @media (prefers-color-scheme: light) {
+      --foreground: var(--theme-light-foreground);
+      --background: var(--theme-light-background);
+    }
+  }
+
+  @supports light-dark() {
+    --foreground: light-dark(
+      var(--theme-light-foreground),
+      var(--theme-dark-foreground),
+    );
+
+    --background: light-dark(
+      var(--theme-light-background),
+      var(--theme-dark-background)
+    );
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* }}} */
+
+
+/* Terminal Theme {{{ */
+
+:root {
+  --term-foreground:           var(--b24-bright-white);
+  --term-background:           var(--b24-black);
+  --term-background-opacity:   0.9;
+  --term-background-blur:      60px;
+  --term-selection-background: var(--b24-gray);
+
+  --term-background-image:
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, var(--term-background-opacity)),
+      rgba(0, 0, 0, var(--term-background-opacity))
+    ),
+    linear-gradient(
+      90deg,
+      var(--b24-bright-magenta) 0%,
+      var(--b24-bright-magenta) calc(20% - (var(--term-background-blur) / 2)),
+      var(--b24-bright-red)     calc(20% + (var(--term-background-blur) / 2)),
+      var(--b24-bright-red)     calc(40% - (var(--term-background-blur) / 2)),
+      var(--b24-bright-yellow)  calc(40% + (var(--term-background-blur) / 2)),
+      var(--b24-bright-yellow)  calc(60% - (var(--term-background-blur) / 2)),
+      var(--b24-bright-green)   calc(60% + (var(--term-background-blur) / 2)),
+      var(--b24-bright-green)   calc(80% - (var(--term-background-blur) / 2)),
+      var(--b24-bright-cyan)    calc(80% + (var(--term-background-blur) / 2)),
+      var(--b24-bright-cyan)    100%
+    );
+}
+
+/* }}} */
+
+
+/* Shared Values {{{ */
+
+:root {
+  --transition-duration: 0.25s;
+  --animation-delay: .1875s;
+}
+
+/* }}} */
