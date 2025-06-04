@@ -13,27 +13,25 @@
   <img src="me.png" alt="me! :D">
 </a>
 
-<script>
-{
-  let pings = document.querySelector('.pings');
+<script type="module">
+const pings = document.querySelector('.pings');
 
-  !async function ping() {
-    let start = Date.now();
-    let page = await fetch('/ping/');
-    let response = `${Date.now() - start} ms`;
+await async function ping() {
+  const start = Date.now();
+  const page = await fetch('.');
+  const response = `${Date.now() - start} ms`;
 
-    pings
-      .appendChild(document.createElement('div'))
-      .innerText = `response time: ${response.padStart(8, ' ')}`;
+  pings
+    .appendChild(document.createElement('div'))
+    .innerText = `response time: ${response.padStart(8, ' ')}`;
 
-    if (pings.childNodes.length > 4)
-      pings.removeChild(pings.firstChild);
+  if (pings.childNodes.length > 4)
+    pings.removeChild(pings.firstChild);
 
-    document.title = response;
+  document.title = response;
 
-    setTimeout(ping, 1000);
-  }();
-}
+  setTimeout(ping, 1000);
+}();
 </script>
 
 <link rel="stylesheet" href="../common.css" />
