@@ -93,7 +93,7 @@
   </a>
 </div>
 
-<script>
+<script type="module">
 for (let element of document.querySelectorAll('a')) {
   let counter = 0;
   let touched = false;
@@ -115,37 +115,38 @@ for (let element of document.querySelectorAll('a')) {
     }
   });
 }
+</script>
 
-{
-  let KeyCode = {
-    KeyA: 65,
-    KeyB: 66,
-    KeyH: 72,
-    KeyJ: 74,
-    KeyK: 75,
-    KeyL: 76,
-    ArrowUp: 38,
-    ArrowDown: 40,
-    ArrowLeft: 37,
-    ArrowRight: 39,
-  };
+<script type="module">
+const KeyCode = {
+  KeyA: 65,
+  KeyB: 66,
+  KeyH: 72,
+  KeyJ: 74,
+  KeyK: 75,
+  KeyL: 76,
+  ArrowUp: 38,
+  ArrowDown: 40,
+  ArrowLeft: 37,
+  ArrowRight: 39,
+};
 
-  let matchers = [
-    [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
-    [ 75, 75, 74, 74, 72, 76, 72, 76, 66, 65 ],
-  ];
+const matchers = [
+  [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
+  [ 75, 75, 74, 74, 72, 76, 72, 76, 66, 65 ],
+];
 
-  let buffer = new Array(matchers.at(0).length).fill(0);
-  document.addEventListener('keyup', event => {
-    buffer.splice(0, buffer.length, ...buffer.slice(1), KeyCode[event.code]);
+const buffer = new Array(matchers.at(0).length).fill(0);
 
-    for (let match of matchers) {
-      if (buffer.join('') == match.join('')) {
-        location.href = atob('aHR0cHM6Ly9wbmsuZGV2Lz9yZWY9emljay5raW0=');
-      }
+document.addEventListener('keyup', event => {
+  buffer.splice(0, buffer.length, ...buffer.slice(1), KeyCode[event.code]);
+
+  for (let match of matchers) {
+    if (buffer.join('') == match.join('')) {
+      location.href = atob('aHR0cHM6Ly9wbmsuZGV2Lz9yZWY9emljay5raW0=');
     }
-  });
-}
+  }
+});
 </script>
 
 <!-- <link rel="stylesheet" href="common.css" /> -->
