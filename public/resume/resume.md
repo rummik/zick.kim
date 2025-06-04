@@ -1,13 +1,17 @@
  ![me :D](me.png) *Kim Zick
 ============================
-Hi!  I am a self-automated individual, with {since:2002} years of general
+Hi!  I am a self-automated individual, with over {since:2002} years of general
 software development experience, around {since:2011} of which are represented
-on [GitLab](https://gitlab.com/rummik).  I primarily design and build small web
-applications, system applications targeting the CLI, and have experience
-designing and building frontend UI.
+on [GitLab][] and [GitHub][]. I primarily design and build automation
+systems that reduce developer workload, and have extensive experience creating
+web applications, system applications targeting the CLI, and designing frontend
+UI.
 
 I also really enjoy working with others to build amazing things, wear hats,
 write code, and chew bubble gum.
+
+[GitLab]: https://gitlab.com/rummik
+[GitHub]: https://github.com/rummik
 
 <!--
   I also try to avoid buzzwords, which is why you don't see 'self-motivated',
@@ -16,7 +20,7 @@ write code, and chew bubble gum.
 -->
 
    Website | <https://zick.kim>
-    Resume | <https://zick.kim/resume/>
+    Resume | <https://zick.kim/resume>
      Email | <hi@9k1.us> or [one just for you](https://9k1.us)
      Phone | [(413) 648-7531](tel:413-648-7531)
     GitLab | <https://gitlab.com/rummik>
