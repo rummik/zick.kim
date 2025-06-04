@@ -472,15 +472,6 @@ body:has(#view-source:target) {
 </style>
 
 <script type="module">
-// JS hooks for toggling style
-/*window.addEventListener('hashchange', () => {
-  const classList = document.body.classList;
-  classList.remove('source', 'styled');
-  classList.add(/source/.test(location.hash) ? 'source' : 'styled');
-});
-
-window.dispatchEvent(new Event('hashchange'));*/
-
 // A slightly Markdown parser
 const response = await fetch('resume.md');
 const responseText = await response.text();
@@ -524,7 +515,6 @@ content.innerHTML += responseText
   .replace(/^(?<text>.+)\n(?<line>[=-]+)$/mg, (_, text, line, ...args) => {
     const level = line[0] === '=' ? 1 : 2;
     const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    console.log(args.length, args.pop());
     return `<h${level} id="${id}">${text}</h${level}>\n<span class="header-line">${line}</span>`;
   })
   .replace(/^(#+)(.+)$/mg, (_, hashes, text) => {
