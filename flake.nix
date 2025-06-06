@@ -39,11 +39,11 @@
           languages.javascript = {
             enable = true;
             corepack.enable = true;
-            yarn.enable = true;
+            pnpm.enable = true;
           };
 
           scripts.wrangler.exec = /* sh */ ''
-            npx wrangler $@
+            pnpm dlx wrangler $@
           '';
 
           processes.wrangler.exec = /* sh */ ''
