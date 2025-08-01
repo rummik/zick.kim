@@ -39,8 +39,8 @@ Public Key | [739C F2CB EF82 02E5](https://zick.kim/rummik.asc)
                          JSONML
         Source Control | Git, Mercurial
          Documentation | JSDoc, Doxygen
-  Testing & Automation | Terraform, Concourse, GitHub CI, Travis CI, Circle CI, Gulp,
-                         Grunt, Karma, Mocha, Dalek.js, JSHint, Cucumber (Ruby),
+  Testing & Automation | Terraform, Concourse, GitHub Actions, Travis CI, Circle CI,
+                         Gulp, Grunt, Karma, Mocha, Dalek.js, JSHint, Cucumber,
                          Webdriver.io, Playwright
 Libraries & Frameworks | React, React Native, Angular, Underscore, Lodash, jQuery,
                          Zepto, Dabble, Socket.io, Bootstrap, Slim, Express.js,
@@ -60,13 +60,14 @@ Collaborated with multiple teams to assess developer needs and select appropriat
 tooling for composable development environments that can easily be reused across
 testing and build infrastructure.
 
-- Tools: Terraform, Concourse, Helm, Docker, Artifactory, Kubernetes
+- Tools: Terraform, Concourse, Helm, Docker, Artifactory, Kubernetes,
+  GitHub Actions
 
 ### Software Engineer III - AccelaSchool (March 2019 -> August 2019)
 Maintained the in-house developed flagship web and mobile apps, and updated
 tooling to streamline and generally improve development experience.
 
-- Tools: GitHub CI, React Native (Android, iOS), Fastly, Node.js
+- Tools: GitHub Actions, React Native (Android, iOS), Fastly, Node.js
 
 ### Software Engineer, Development Lead - Clarabyte (February 2016 → June 2018)
 Lead a team of engineers through the process of developing new data security
