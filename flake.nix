@@ -1,5 +1,5 @@
 {
-  description = "Personal email domain, etc";
+  description = "Personal website, resume";
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
@@ -31,7 +31,7 @@
         # system.
 
         devenv.shells.default = {
-          name = "9k1.us";
+          name = "zick.kim";
 
           # https://devenv.sh/reference/options/
           packages = [ ];
