@@ -23,7 +23,7 @@ write code, and chew bubble gum.
     Resume | <https://zick.kim/resume>
      Email | <hi@9k1.us> or [one just for you](https://9k1.us)
      Phone | [(413) 648-7531](tel:413-648-7531)
-    GitLab | <https://gitlab.com/rummik>
+    GitHub | <https://github.com/rummik>
   Location | [Pittsburgh, PA 15221](https://www.google.com/maps/place/Pittsburgh,+PA)
    Keybase | <https://keybase.io/rummik>
 Public Key | [739C F2CB EF82 02E5](https://zick.kim/rummik.asc)
@@ -31,32 +31,42 @@ Public Key | [739C F2CB EF82 02E5](https://zick.kim/rummik.asc)
 
  Skills
 --------
-             Languages | TypeScript (TSX), JavaScript (browsers, [Node.js][], JSX), shell
-                         (Zsh, Bash), PHP, SQL (MySQL, Postgres), JSON, Twig,
-                         [Swig][], EJS, Savant3, CSS (CSS3, Less, Stylus)
-      Markup Languages | Markdown (vanilla, GitHub), YAML, XML, HTML (XHTML,
-                         HTML5), JSONML
+             Languages | Nix, TypeScript (TSX), JavaScript (browsers, Node.js, JSX),
+                         shell (Zsh, Bash, Fish), PHP, SQL (MySQL, Postgres), JSON,
+                         Twig, Swig, EJS, Savant3, CSS (CSS3, Less, Stylus), Python,
+                         Perl, Dart
+      Markup Languages | Markdown (vanilla, GitHub), YAML, XML, HTML (XHTML, HTML5),
+                         JSONML
         Source Control | Git, Mercurial
          Documentation | JSDoc, Doxygen
-               Testing | Concourse, Travis CI, Circle CI, [Gulp][], [Grunt][], Karma,
-                         [Mocha][], [Dalek.js][], [JSHint][], Cucumber (Ruby),
-                         [Webdriver.io][]
-Libraries & Frameworks | React, Angular, Underscore, [Lodash][], jQuery,
-                         [Zepto][], [Dabble][], Socket.io, Bootstrap, Slim,
-                         [Express][], Propel, [Browserify][], Angular,
-                         [VanillaJS][]
+  Testing & Automation | Terraform, Concourse, GitHub CI, Travis CI, Circle CI, Gulp,
+                         Grunt, Karma, Mocha, Dalek.js, JSHint, Cucumber (Ruby),
+                         Webdriver.io, Playwright
+Libraries & Frameworks | React, React Native, Angular, Underscore, Lodash, jQuery,
+                         Zepto, Dabble, Socket.io, Bootstrap, Slim, Express.js,
+                         Propel, Browserify, VanillaJS, Next.js
           HTTP Servers | Nginx (with PHP-FPM), Apache 2
       Database Servers | MySQL, Postgres, MongoDB, SQLite
-     Operating Systems | Linux (Debian, Ubuntu, CentOS, NixOS)
-                  Misc | [CloudFlare][], [NPM][], [Yarn][], [Composer][], [Antigen][]
+     Operating Systems | Linux (Debian, Ubuntu, CentOS, NixOS), macOS
+                  Misc | CloudFlare, Digital Ocean, Docker, Vagrant, Kubernetes,
+                         Helm, NPM, Yarn, Composer, Antigen
 
 
  Work History
 --------------
 
 ### Senior DevOps Engineer - Carnegie Robotics (September 2019 → August 2020)
+Collaborated with multiple teams to assess developer needs and select appropriate
+tooling for composable development environments that can easily be reused across
+testing and build infrastructure.
+
+- Tools: Terraform, Concourse, Helm, Docker, Artifactory, Kubernetes
 
 ### Software Engineer III - AccelaSchool (March 2019 -> August 2019)
+Maintained the in-house developed flagship web and mobile apps, and updated
+tooling to streamline and generally improve development experience.
+
+- Tools: GitHub CI, React Native (Android, iOS), Fastly, Node.js
 
 ### Software Engineer, Development Lead - Clarabyte (February 2016 → June 2018)
 Lead a team of engineers through the process of developing new data security
@@ -78,7 +88,7 @@ were eventually used in the development of commercial products at Clarabyte.
 Worked with a team of engineers to build a unique experience for medical
 professionals to navigate patient information.
 
-- Tools: Git, Cucumber, Angular, [Gulp][], Node.js, HTML, CSS
+- Tools: Git, Cucumber, Angular, Gulp, Node.js, HTML, CSS
 
 ### Contributor - Gratipay (January 2013 → January 2015)
 Primarily maintained and contributed to the JavaScript portions of the
@@ -107,14 +117,13 @@ GitLab profile][] by viewing [my public repositories][].
 [my GitHub profile]: https://github.com/rummik
 [my public repositories]: https://gitlab.com/zick.kim
 
-### Shellcast / TTY.tv - Easy TTY broadcasting
+### Shellcast - Easy TTY broadcasting
 Shellcast broadcasts a terminal to a public (or private) URL, usually on tty.tv.
 The idea was to have something similar to twitch.tv, but for programmers,
 MUD/Mush games, and anything that runs on the CLI.
 
-- Tools: [Node.js][], HTML5, CSS3, [Express][], [Underscore][], Socket.io,
-  [Swig][], PTY.js, Term.js
-- <https://tty.tv>
+- Tools: Node.js, HTML5, CSS3, Express, Underscore, Socket.io, Swig, PTY.js,
+  Term.js
 - <https://gitlab.com/chameleoid/tty.tv/shellcast>
 
 ### Telepathy - A telepathic password manager
@@ -128,10 +137,8 @@ It's also built with a responsive layout, and mobile webapp support.  (It
 includes an icon used when being added to an Android/iOS homescreen, and looks
 pretty on small screens ☺)
 
-- Tools: [Node.js][], jQuery, [Grunt][], [JSHint][], Karma, [Mocha][], [Swig][],
-  [Stylus][], HTML5, CSS3
-- <https://telepathy.pw>
-- <https://gitlab.com/chameleoid/telepathy>
+- Tools: Node.js, jQuery, Grunt, JSHint, Karma, Mocha, Swig, Stylus, HTML5, CSS3
+- <https://gitlab.com/chameleoid/sykey/telepathy>
 
 
 ### 9k1.us  <!-- IT'S OVER 9000! -->
@@ -139,33 +146,7 @@ My personal, private, paste/file bin, and URL shortener.  It also provides
 LMGTFY-like search functionality and a simple API for determining your public
 IP.
 
-- Tools: JavaScript (search), Typescript, Nest.js, Yarn, [Node.js][]
-- <https://9k1.us>
-- <https://9k1.us/ip>
-- <https://9k1.us/search>
-- <https://gitlab.com/rummik/9k1.us>
-
-<!-- LINKS!  ALL THE LINKS! -->
-
-[Antigen]: https://github.com/zsh-users/antigen
-[Browserify]: http://browserify.org/
-[CloudFlare]: https://www.cloudflare.com/
-[Composer]: https://getcomposer.org/
-[Dabble]: https://github.com/nramenta/dabble
-[Dalek.js]: http://dalekjs.com/
-[Express]: http://expressjs.com/
-[Git]: http://git-scm.com/
-[Grunt]: http://gruntjs.com/
-[Gulp]: http://gulpjs.com/
-[JSHint]: http://jshint.com/
-[Lodash]: https://lodash.com/
-[Mocha]: http://mochajs.org/
-[NPM]: https://www.npmjs.org/
-[Node.js]: http://nodejs.org/
-[Stylus]: https://learnboost.github.io/stylus/ 
-[Swig]: https://paularmstrong.github.io/swig/
-[VanillaJS]: http://vanilla-js.com/
-[Webdriver.io]: http://webdriver.io/
-[Zepto]: http://zeptojs.com/
+- Tools: JavaScript (search), Typescript, Nest.js, Yarn, Node.js
+- <https://gitlab.com/iotasamurai/9k1.us>
 
 <!-- vim: set spell wrap tw=80 lbr ft=markdown sw=2 ts=2 et fdm=marker : -->
