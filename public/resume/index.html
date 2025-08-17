@@ -159,7 +159,8 @@ body:not(:has(#view-source:target)) {
   .list,
   .image .src,
   .image .alt,
-  .template-source {
+  .template-source,
+  .token {
     display: none;
   }
 
@@ -263,12 +264,15 @@ body:has(#view-source:target) {
   font-family: 'Fira Code', monospace;
 
   .download-pdf {
-    display: none;
+    position: absolute;
+    visibility: hidden;
+    user-select: none;
   }
 
   .toggle-source {
     padding-top: 0;
     box-shadow: 0 0 1.25em 1em #111;
+    user-select: none;
   }
 
   .toggle-source::after {
@@ -310,24 +314,21 @@ body:has(#view-source:target) {
     list-style: none;
   }
 
-  /* images */
-  .image img,
-  .template-result {
-    display: none;
+  .token {
+    display: inline;
   }
 
-  .image {
-    .alt::before,
-    .alt::after,
-    .src::before,
-    .src::after {
-      color: var(--b24-bright-cyan);
-    }
+  .template-result {
+    /* display: none; */
+    visibility: hidden;
+    position: absolute;
+    user-select: none;
+  }
 
-    .alt::before { content: '!['; }
-    .alt::after { content: ']'; }
-    .src::before { content: '('; }
-    .src::after { content: ')'; }
+  /* images */
+  .image {
+    img { display: none; }
+    .token { color: var(--b24-bright-cyan); }
   }
 
   /* links */
@@ -335,25 +336,7 @@ body:has(#view-source:target) {
     color: var(--b24-bright-magenta);
     text-decoration: none;
 
-    &::before, &::after {
-      color: var(--b24-bright-cyan);
-    }
-
-    &.quicklink {
-      &::before { content: '<'; }
-      &::after { content: '>'; }
-    }
-
-    &.link-href {
-      &::before { content: '('; }
-      &::after { content: ')'; }
-    }
-
-    &.link, &.link-ref, &.link-ref-name {
-      &::before { content: '['; }
-      &::after { content: ']'; }
-    }
-
+    .token { color: var(--b24-bright-cyan) !important; }
     &.link { color: var(--b24-bright-blue); }
     &.link-ref,
     &.link-ref-name { color: var(--b24-bright-green); }
@@ -377,15 +360,10 @@ body:has(#view-source:target) {
   /* lists */
   dt {
     color: var(--b24-bright-green);
-
-    &::after {
-      content: ' |';
-      color: var(--b24-bright-cyan);
-    }
+    .token { color: var(--b24-bright-cyan); }
   }
 
-  li::before {
-    content: '-';
+  li .token {
     color: var(--b24-bright-yellow);
   }
 
@@ -396,6 +374,7 @@ body:has(#view-source:target) {
   .line {
     color: var(--b24-bright-yellow);
     display: inline-block;
+    user-select: none;
   }
 }
 
@@ -495,34 +474,60 @@ const maxDigits = lines.toString().length;
 const content = document.querySelector('.content');
 const links = {};
 
+function token([ token ]) {
+  return `<span class="token">${token}</span>`;
+}
+
+document.addEventListener('copy', (event) => {
+  if (document.querySelector('body:not(:has(#view-source:target))')) return;
+
+  const contentRange = document.createRange();
+  const selection = document.getSelection();
+  let text = '';
+
+  contentRange.selectNode(content);
+
+  for (let i=0; i<selection.rangeCount; i++) {
+    const range = selection.getRangeAt(i);
+    if (range.intersectsNode(content)) {
+      text += range;
+    }
+  }
+
+  console.log(text);
+
+  event.clipboardData.setData('text/plain', text);
+  event.preventDefault();
+});
+
 let line = 0;
 
 // Markdown-ish parser -- includes some extra things, slightly clobbers a few things, lacks other things, has some legacy things
 content.innerHTML += responseText
   // Images
-  .replace(/!\[([^\]]+)\]\(([^\)]+)\)/g, '<span class="image"><span class="alt">$1</span><span class="src">$2</span><img src="$2" alt="$1"></span>')
+  .replace(/!\[([^\]]+)\]\(([^\)]+)\)/g, `<span class="image"><span class="alt">${token`![`}$1${token`]`}</span><span class="src">${token`(`}$2${token`)`}</span><img src="$2" alt="$1"></span>`)
 
   // Links
   .replace(/<(?!\/)([^>\s]+)>/g, (_, link) =>
-    `<a href="${/^[^:]+@.+$/.test(link) ? `mailto:${link}` : link}" class="quicklink">${link}</a>`
+  `<a href="${/^[^:]+@.+$/.test(link) ? `mailto:${link}` : link}" class="quicklink">${token`&lt;`}${link}${token`&gt;`}</a>`
   )
 
-  .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" class="link">$1</a><a href="$2" class="link-href">$2</a>')
+  .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, `<a href="$2" class="link">${token`[`}$1${token`]`}</a><a href="$2" class="link-href">${token`(`}$2${token`)`}</a>`)
 
   .replace(/\[([^\]]+)\]:(.+)/g, (_, name, url) => {
     const trimmed = url.replace(/^\s+|\s+$/g, '');
 
     links[name.replace(/\s+/g, ' ')] = trimmed;
 
-    return `<a class="link-ref" href="${trimmed}">${name}</a>` +
+    return `<a class="link-ref" href="${trimmed}">${token`[`}${name}${token`]:`}</a>` +
            `<a class="link-ref-url" href="${trimmed}">${url}</a>`;
   })
 
   .replace(/\[([^\]]+)\]\[([^\]]*)\]/g, (_, title, name) => {
     const url = links[(name.length ? name : title).replace(/\s+/g, ' ')] || '#';
 
-    return `<a class="link" href="${url}" ${name ? `title="${name}"` : ''}>${title}</a>` +
-           `<a class="link-ref-name" href="${url}">${name}</a>`;
+    return `<a class="link" href="${url}" ${name ? `title="${name}"` : ''}>${token`[`}${title}${token`]`}</a>` +
+           `<a class="link-ref-name" href="${url}">${token`[`}${name}${token`]`}</a>`;
   })
 
   // Headers
@@ -537,11 +542,11 @@ content.innerHTML += responseText
   })
 
   // Lists...don't ask.  It's lazy
-  .replace(/^(\s*)(?!-->)(?:[-*])((?:[^|\n]|\n )+)/mg, '$1<li>$2</li>')
+  .replace(/^(\s*)(?!-->)(?:[-*])((?:[^|\n]|\n )+)/mg, `$1<li>${token`-`}$2</li>`)
   .replace(/((?:<li>(?:.|\n)+?<\/li>\n?)+)/g, '<ul>$1</ul>')
 
   // Definition lists.  I'm probably using this wrong, but it works
-  .replace(/^(.+?)(\s*)\|((?:[^|\n]|\n )+)$/mg, '<dt>$1</dt><dd>$3</dd>')
+  .replace(/^(.+?)(\s*)\|((?:[^|\n]|\n )+)$/mg, `<dt>$1${token` |`}</dt><dd>$3</dd>`)
   .replace(/((?:<dt>(?:.|\n)+?<\/dt><dd>(?:.|\n)+?<\/dd>\n?)+)/g, '<dl>$1</dl>')
 
   // HTML comments
@@ -571,6 +576,6 @@ content.innerHTML += responseText
 
   // Line numbers...it's better not to ask how much of a mess this makes
   .replace(/^/mg, () =>
-    `<span class="line">${(++line).toString().padStart(maxDigits, ' ')}</span> `
+    `<span class="line">${(++line).toString().padStart(maxDigits, ' ')} </span>`
   );
 </script>
